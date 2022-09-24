@@ -1,7 +1,13 @@
 import { useState } from "react";
 
+// Components
+import VideoButton from "../UI/VideoButton";
+
+// CSS
+import { Button } from "@mantine/core";
+
 // assets
-import VideoBackground from "../../assets/video/Crossfit.mp4";
+import VideoBackground from "../../assets/video/Crossfit-Cinematic.mp4";
 
 const Main = () => {
   const [toggleMute, setToggleMute] = useState(true);
@@ -16,13 +22,16 @@ const Main = () => {
           type="video/mp4"
           src={VideoBackground}
           muted={toggleMute ? "True" : ""}
-          pause
           loop
           autoPlay
         />
       )}
-      <button onClick={() => setToggleMute(!toggleMute)}>Toggle Mute</button>
-      <button onClick={() => setStopVideo(!stopVideo)}>Toggle Play</button>
+      <VideoButton action={() => setToggleMute(!toggleMute)}>
+        Toggle Mute
+      </VideoButton>
+      <VideoButton action={() => setStopVideo(!stopVideo)}>
+        Toggle Play
+      </VideoButton>
     </div>
   );
 };
