@@ -14,9 +14,7 @@ import {
   Center,
   Container,
   Flex,
-  IconButton,
   Image,
-  Text,
   VStack,
   Heading,
   Button,
@@ -65,9 +63,10 @@ const Main = () => {
           )}
           <VStack>
             <Heading
+              textAlign="center"
               as="h1"
               size="4xl"
-              noOfLines={1}
+              noOfLines={2}
               textColor="white"
               _hover={{
                 transition: "all 1.65s ease",
