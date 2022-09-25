@@ -38,7 +38,7 @@ export const Header2 = () => {
       w="full"
       p={2}
     >
-      <Flex justifyContent="center">
+      <Flex justifyContent="space-between" w={"full"} px={2}>
         <Flex
           display={["none", "none", "flex", "flex"]}
           justifyContent="center"
