@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 // Components
 import HomePage from "./pages/HomePage";
-import Header2 from "./components/header/Header2";
+import Header from "./components/header/Header";
 
 // Router
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -17,10 +17,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 function App() {
   return (
     <Fragment>
-      {/* <Flex display={{ sm: "none", md: "flex" }}>
-        <Header />
-      </Flex> */}
-      <Header2 />
+      <Header />
       <Routes>
         <Route path="/" element={<Navigate replace to="/home" />} />
         <Route path="/home" element={<HomePage />} />
