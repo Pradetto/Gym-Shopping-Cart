@@ -1,7 +1,7 @@
 import React from "react";
-
+import { Link as ReachLink } from "react-router-dom";
 // CSS
-import { Flex, Icon, HStack, IconButton, Heading } from "@chakra-ui/react";
+import { Flex, Box, HStack, IconButton, Heading, Link } from "@chakra-ui/react";
 import { IoBarbell } from "react-icons/io5";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -14,7 +14,9 @@ function MobileContent(props) {
       p={2}
     >
       <HStack>
-        <Icon as={IoBarbell} size={4} />
+        <Link as={ReachLink} to="/">
+          <Box as={IoBarbell} size={35} color={"limegreen"} />
+        </Link>
         <Heading as="h2">Fitness+</Heading>
       </HStack>
       <IconButton

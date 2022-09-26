@@ -6,7 +6,6 @@ function HomePage() {
   return (
     <Fragment>
       <Main />
-      <Footer />
     </Fragment>
   );
 }

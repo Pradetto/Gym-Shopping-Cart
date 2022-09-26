@@ -3,6 +3,7 @@ import { Fragment } from "react";
 // Components
 import HomePage from "./pages/HomePage";
 import Header from "./components/header/Header";
+// import Footer from "./components/footer/Footer";
 
 // Router
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -22,9 +23,8 @@ function App() {
         <Route path="/" element={<Navigate replace to="/home" />} />
         <Route path="/home" element={<HomePage />} />
       </Routes>
-      {/* <Header />
-      <Main />
-      <div>Hello</div> */}
+      {/* Make a dynamic footer one for the home page then one for the rest and I can put a link to the credits from there */}
+      {/* <Footer /> */}
     </Fragment>
   );
 }

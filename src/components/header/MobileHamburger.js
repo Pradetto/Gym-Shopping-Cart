@@ -1,36 +1,119 @@
-import React, { useState } from "react";
-import { Link as ReachLink, NavLink } from "react-router-dom";
+import React, { Fragment } from "react";
+
+// Components
+import HamburgerButton from "./HamburgerButton";
 
 // CSS
-import {
-  Flex,
-  Button,
-  IconButton,
-  Link,
-  HStack,
-  Heading,
-  Icon,
-  Divider,
-} from "@chakra-ui/react";
+import { Flex, IconButton, Divider, HStack, Text, Box } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
+import { GiShoppingCart } from "react-icons/gi";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
-function MobileHamburger() {
+function MobileHamburger(props) {
   return (
-    <Button
-      as=""
-      variant="outline"
-      aria-label="Contact"
-      my={3}
-      w="100%"
-      onClick={() => changeDisplay("none")}
+    <Flex
+      w="100vw"
+      display={props.display}
+      bgColor="gray.50"
+      zIndex={20}
+      h="100vh"
+      pos="fixed"
+      top="0"
+      left="0"
+      overflowY="auto"
+      flexDir="column"
     >
-      <Link
-        as={ReachLink}
-        to="/contact"
-        style={{ width: "100%", textAlign: "center" }}
-      >
-        Contact
-      </Link>
-    </Button>
+      <Flex justify="flex-end">
+        <IconButton
+          mt={2}
+          mr={2}
+          aria-label="Open Menu"
+          size="lg"
+          icon={<CloseIcon />}
+          onClick={props.setNoneDisplayHandler}
+        />
+      </Flex>
+
+      <Flex flexDir="column" align="center" w="full" p={3}>
+        <HamburgerButton
+          to="/"
+          text="Home"
+          setNoneDisplayHandler={props.setNoneDisplayHandler}
+        />
+        <HamburgerButton
+          to="/products"
+          text="Products"
+          setNoneDisplayHandler={props.setNoneDisplayHandler}
+        />
+        <HamburgerButton
+          to="/contact"
+          text="Contact"
+          setNoneDisplayHandler={props.setNoneDisplayHandler}
+        />
+
+        <Divider backgroundColor={"gray.500"} />
+
+        {/* {isLoggedIn ? (
+          <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
+        ) : (
+          <DesktopButton text="Sign Up" to="/signup" />
+        )} */}
+        {!props.isLoggedIn && (
+          <HamburgerButton
+            text="Sign Up"
+            to="/signup"
+            setNoneDisplayHandler={props.setNoneDisplayHandler}
+          />
+        )}
+        {props.isLoggedIn ? (
+          <Fragment>
+            <HamburgerButton
+              to="/logout"
+              text="Logout"
+              action={props.logoutHandler}
+              setNoneDisplayHandler={props.setNoneDisplayHandler}
+            />
+            <HamburgerButton
+              to="/favorites"
+              setNoneDisplayHandler={props.setNoneDisplayHandler}
+            >
+              {!props.hasFavorites && (
+                <Box
+                  as={AiOutlineHeart}
+                  size={25}
+                  color="#e31b23"
+                  onClick={props.isFavoritesHandler}
+                />
+              )}
+              {props.hasFavorites && (
+                <Box
+                  as={AiFillHeart}
+                  size={25}
+                  color="#e31b23"
+                  onClick={props.isFavoritesHandler}
+                />
+              )}
+            </HamburgerButton>
+          </Fragment>
+        ) : (
+          <HamburgerButton
+            to="/login"
+            text="Login"
+            action={props.loginHandler}
+            setNoneDisplayHandler={props.setNoneDisplayHandler}
+          />
+        )}
+        <HamburgerButton
+          to="/cart"
+          setNoneDisplayHandler={props.setNoneDisplayHandler}
+        >
+          <HStack>
+            <Text>0</Text>
+            <Box as={GiShoppingCart} size={35} />
+          </HStack>
+        </HamburgerButton>
+      </Flex>
+    </Flex>
   );
 }
 
