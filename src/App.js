@@ -3,6 +3,7 @@ import { Fragment } from "react";
 // Components
 import HomePage from "./pages/HomePage";
 import Header from "./components/header/Header";
+import ProductsPage from "./pages/ProductsPage";
 // import Footer from "./components/footer/Footer";
 
 // Router
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate replace to="/home" />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/products" element={<ProductsPage />} />
       </Routes>
       {/* Make a dynamic footer one for the home page then one for the rest and I can put a link to the credits from there */}
       {/* <Footer /> */}
