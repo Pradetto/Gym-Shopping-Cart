@@ -5,17 +5,29 @@ import ProductsSidebar from "../components/main/ProductsSidebar";
 import ProductContainer from "../components/main/ProductContainer";
 
 // CSS
-import { Center, Flex } from "@chakra-ui/react";
+import {
+  Center,
+  Flex,
+  HStack,
+  Grid,
+  GridItem,
+  Box,
+  Container,
+} from "@chakra-ui/react";
 
 function Products() {
   return (
     <Fragment>
       {/* Desktop View side-by-side */}
-      <Flex w={"full"} display={["none", "flex", "flex"]}>
-        <Flex w={"700px"}>
-          <ProductsSidebar />
-        </Flex>
-        <ProductContainer />
+      <Flex display={["none", "flex", "flex"]}>
+        <Grid gridTemplateColumns={"228px 1fr"}>
+          <GridItem>
+            <ProductsSidebar />
+          </GridItem>
+          <GridItem>
+            <ProductContainer />
+          </GridItem>
+        </Grid>
       </Flex>
 
       {/* Mobile View Up and Down */}

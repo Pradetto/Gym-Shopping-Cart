@@ -121,10 +121,10 @@ const allData = [
 
 function ProductContainer() {
   return (
-    <Flex flexWrap={"wrap"}>
+    <Flex wrap={"wrap"}>
       {allData.map((data) => (
         <Flex
-          p={21}
+          p={4}
           alignItems="center"
           justifyContent="center"
           key={Math.random()}
@@ -132,7 +132,7 @@ function ProductContainer() {
           {/* w='full' I removed this */}
           <Box
             bg={"white"}
-            maxW="sm"
+            maxW="22rem" // originally was sm
             borderWidth="1px"
             rounded="lg"
             shadow="lg"

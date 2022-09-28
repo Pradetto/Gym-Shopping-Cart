@@ -1,5 +1,8 @@
 import React, { Fragment } from "react";
 
+// Components
+import ProductSidebarDesktop from "./ProductSidebarDesktop";
+
 // CSS
 import {
   Flex,
@@ -13,82 +16,30 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-const dummyData = [
-  //   { "All Products": ["Apparel", "Footwear", "Gear"] },
-  {
-    Subcategory: { Apparel: ["Shirts", "Pants"] },
-  },
-  //   { Footwear: ["Trainers", "Running"] },
-  //   { Gear: ["Belts"] },
-];
+import {
+  categoriesData as dummyData,
+  categoryData,
+  subcategoryData,
+} from "../../store/dummData";
+console.log(dummyData);
 
 function ProductsSidebar() {
   // How to get the currently selected? Maybe the URL???
+
   return (
     <Fragment>
       {/* Desktop */}
-      <Center w={"full"}>
-        <Flex
-          w={"full"}
-          display={["none", "flex", "flex"]}
-          h="full"
-          position={"fixed"}
-          my={4}
-          flexDir="column"
-        >
-          {/* Need to build out the filter below with maybe the catalog id? */}
-          <Heading
-            textAlign="center"
-            as="h3"
-            size="lg"
-            noOfLines={1}
-            textColor="black"
-            _hover={{
-              transition: "all 1.65s ease",
-              backgroundImage:
-                "linear-gradient(to left, violet, indigo, blue, green, #d2d20f, #eb9c0b, red)",
-              backgroundClip: "text",
-              textFillColor: "tansparent",
-            }}
-          >
-            Filters: All Products
-          </Heading>
-          {/* {dummyData.map((item) => (
-            <Heading
-              textAlign="center"
-              as="h3"
-              size="lg"
-              noOfLines={1}
-              textColor="black"
-              _hover={{
-                transition: "all 1.65s ease",
-                backgroundImage:
-                  "linear-gradient(to left, violet, indigo, blue, green, #d2d20f, #eb9c0b, red)",
-                backgroundClip: "text",
-                textFillColor: "tansparent",
-              }}
-            >
-              {item.Subcategory}
-              <Heading
-                textAlign="center"
-                as="h5"
-                size="md"
-                noOfLines={1}
-                textColor="black"
-                _hover={{
-                  transition: "all 1.65s ease",
-                  backgroundImage:
-                    "linear-gradient(to left, violet, indigo, blue, green, #d2d20f, #eb9c0b, red)",
-                  backgroundClip: "text",
-                  textFillColor: "tansparent",
-                }}
-              >
-                Shirts
-              </Heading>
-            </Heading>
-          ))} */}
-        </Flex>
-      </Center>
+      <Flex
+        display={["none", "flex", "flex"]}
+        h="full"
+        position={"fixed"}
+        my={"7rem"}
+        mx={"2rem"}
+        alignItems="center"
+        flexDir="column"
+      >
+        <ProductSidebarDesktop />
+      </Flex>
 
       {/* {Mobile} */}
       <Flex

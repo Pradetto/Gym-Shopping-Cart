@@ -47,11 +47,12 @@ export const Header = () => {
 
   return (
     <Flex
-      //   position="fixed"
       align="center"
       backgroundColor="gray.300"
       w="full"
       p={2}
+      zIndex={1000000}
+      position="fixed"
     >
       <Flex justifyContent="space-between" w={"full"} px={2}>
         <Flex
