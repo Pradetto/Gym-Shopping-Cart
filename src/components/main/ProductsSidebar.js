@@ -53,7 +53,7 @@ function ProductsSidebar() {
           >
             Filters: All Products
           </Heading>
-          {dummyData.map((item) => (
+          {/* {dummyData.map((item) => (
             <Heading
               textAlign="center"
               as="h3"
@@ -86,7 +86,7 @@ function ProductsSidebar() {
                 Shirts
               </Heading>
             </Heading>
-          ))}
+          ))} */}
         </Flex>
       </Center>
 
