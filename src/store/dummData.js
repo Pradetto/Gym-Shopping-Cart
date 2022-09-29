@@ -1,135 +1,6 @@
-export const categoriesData = [
-  {
-    Apparel: [
-      {
-        shirts: [
-          {
-            productName: "rogue tshirt",
-            newAdd: true,
-            price: 142.21,
-            colors: ["red", "blue", "green"],
-            dateCreated: "09/27/2022",
-            imageOne:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageTwo:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageThree:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-          },
-          {
-            productName: "bengals shirt",
-            newAdd: true,
-            price: 142.21,
-            colors: ["red", "blue", "green"],
-            dateCreated: "09/27/2022",
-            imageOne:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageTwo:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageThree:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-          },
-        ],
-      },
-      {
-        pants: [
-          {
-            productName: "lulu pants",
-            newAdd: true,
-            price: 142.21,
-            colors: ["red", "blue", "green"],
-            dateCreated: "09/27/2022",
-            imageOne:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageTwo:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageThree:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-          },
-          {
-            productName: "lulu joggers shorts",
-            newAdd: true,
-            price: 142.21,
-            colors: ["red", "blue", "green"],
-            dateCreated: "09/27/2022",
-            imageOne:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageTwo:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageThree:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-          },
-        ],
-      },
-    ],
-    footwear: [
-      {
-        runners: [
-          {
-            productName: "Nike Runners",
-            newAdd: true,
-            price: 142.21,
-            colors: ["red", "blue", "green"],
-            dateCreated: "09/27/2022",
-            imageOne:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageTwo:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageThree:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-          },
-          {
-            productName: "Asics Runners",
-            newAdd: true,
-            price: 142.21,
-            colors: ["red", "blue", "green"],
-            dateCreated: "09/27/2022",
-            imageOne:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageTwo:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageThree:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-          },
-        ],
-      },
-      {
-        trainers: [
-          {
-            productName: "No Bull Trainers",
-            newAdd: true,
-            price: 142.21,
-            colors: ["red", "blue", "green"],
-            dateCreated: "09/27/2022",
-            imageOne:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageTwo:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageThree:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-          },
-          {
-            productName: "Powerlifting Flats",
-            newAdd: true,
-            price: 142.21,
-            colors: ["red", "blue", "green"],
-            dateCreated: "09/27/2022",
-            imageOne:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageTwo:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-            imageThree:
-              "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
-          },
-        ],
-      },
-    ],
-  },
-];
-
 export const categoryData = [
   {
-    categoryId: Math.random(),
+    categoryId: 1,
     category: "Apparel",
     subcategories: [
       { subcategoryId: 1, subcategory: "Shirts" },
@@ -137,7 +8,7 @@ export const categoryData = [
     ],
   },
   {
-    categoryId: Math.random(),
+    categoryId: 2,
     category: "Footwear",
     subcategories: [
       { subcategoryId: 3, subcategory: "Runners" },
@@ -154,7 +25,227 @@ export const subcategoryData = [
     subcatedgoryId: 1,
     productDetails: {
       productId: 1,
-      productName: "rogue tshirt",
+      productName: "Rogue T-Shirt",
+      newAdd: true,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Apparel",
+    CategoryId: 1,
+    subcategory: "shirts",
+    subcatedgoryId: 1,
+    productDetails: {
+      productId: 2,
+      productName: "Nike Shirt",
+      newAdd: false,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Apparel",
+    CategoryId: 1,
+    subcategory: "shirts",
+    subcatedgoryId: 1,
+    productDetails: {
+      productId: 3,
+      productName: "Bylt Collared Shirt",
+      newAdd: true,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Apparel",
+    CategoryId: 1,
+    subcategory: "pants",
+    subcatedgoryId: 2,
+    productDetails: {
+      productId: 4,
+      productName: "Lulu Shorts",
+      newAdd: false,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Apparel",
+    CategoryId: 1,
+    subcategory: "pants",
+    subcatedgoryId: 2,
+    productDetails: {
+      productId: 5,
+      productName: "Nike Joggers",
+      newAdd: false,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Apparel",
+    CategoryId: 1,
+    subcategory: "pants",
+    subcatedgoryId: 2,
+    productDetails: {
+      productId: 6,
+      productName: "Darc Sport Gym Shorts",
+      newAdd: true,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Footwear",
+    CategoryId: 2,
+    subcategory: "Runners",
+    subcatedgoryId: 3,
+    productDetails: {
+      productId: 7,
+      productName: "No Bull Running",
+      newAdd: false,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Footwear",
+    CategoryId: 2,
+    subcategory: "Runners",
+    subcatedgoryId: 3,
+    productDetails: {
+      productId: 8,
+      productName: "Nike Running",
+      newAdd: false,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Footwear",
+    CategoryId: 2,
+    subcategory: "Runners",
+    subcatedgoryId: 3,
+    productDetails: {
+      productId: 9,
+      productName: "Asics Running",
+      newAdd: true,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Footwear",
+    CategoryId: 2,
+    subcategory: "Trainers",
+    subcatedgoryId: 4,
+    productDetails: {
+      productId: 10,
+      productName: "Powerlifting flats",
+      newAdd: true,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Footwear",
+    CategoryId: 2,
+    subcategory: "Trainers",
+    subcatedgoryId: 4,
+    productDetails: {
+      productId: 11,
+      productName: "No Bull Flat Soles",
+      newAdd: true,
+      price: 142.21,
+      colors: ["red", "blue", "green"],
+      dateCreated: "09/27/2022",
+      imageOne:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageTwo:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+      imageThree:
+        "https://assets.roguefitness.com/f_auto,q_auto,c_limit,w_1600,b_rgb:ffffff/catalog/Apparel/Men%27s%20Apparel/T-Shirts/HW0402/HW0402-web3_fxmrvv.png",
+    },
+  },
+  {
+    category: "Footwear",
+    CategoryId: 2,
+    subcategory: "Trainers",
+    subcatedgoryId: 4,
+    productDetails: {
+      productId: 12,
+      productName: "Nike Trainers",
       newAdd: true,
       price: 142.21,
       colors: ["red", "blue", "green"],
@@ -168,26 +259,3 @@ export const subcategoryData = [
     },
   },
 ];
-// export default categoriesData;
-
-// const categoryData = [
-//     {
-//         category: [
-//             {
-//                 'Apparel': [
-//                     {
-//                         subcategory: 'Shirts',
-//                     }
-//                 ]
-//             }
-//         ]
-//     }
-// ]
-
-// const categoryData = {
-//     category: [
-//         {
-//             item: 'Apparel'
-//         }
-//     ]
-// }

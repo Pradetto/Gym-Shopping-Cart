@@ -2,10 +2,10 @@ import React, { Fragment } from "react";
 
 // Components
 import SidebarPrimaryHeading from "./SidebarPrimaryHeading";
+import SidebarSecondaryHeading from "./SidebarSecondaryHeading";
 
 // Dummy Data
 import { categoryData, subcategoryData } from "../../store/dummData";
-import SidebarSecondaryHeading from "./SidebarSecondaryHeading";
 
 // CSS
 import {
@@ -60,20 +60,6 @@ function ProductSidebarDesktop() {
         ))}
         <SidebarPrimaryHeading text="View All"></SidebarPrimaryHeading>
       </UnorderedList>
-      {/* <UnorderedList>
-            {categoryData.map((item) => (
-              <SidebarPrimaryHeading id={Math.random()}>
-                {item.category}
-                <UnorderedList key={Math.random()}>
-                  {item.subcategories.map((item) => (
-                    <SidebarSecondaryHeading id={Math.random()}>
-                      {item.subcategory}
-                    </SidebarSecondaryHeading>
-                  ))}
-                </UnorderedList>
-              </SidebarPrimaryHeading>
-            ))}
-          </UnorderedList> */}
     </VStack>
   );
 }

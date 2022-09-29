@@ -7,17 +7,7 @@ import DesktopContent from "./DesktopContent";
 import MobileHamburger from "./MobileHamburger";
 
 // CSS
-import {
-  Flex,
-  Button,
-  IconButton,
-  Link,
-  HStack,
-  Heading,
-  Icon,
-  Divider,
-  Box,
-} from "@chakra-ui/react";
+import { Flex, Link, Heading, Box } from "@chakra-ui/react";
 
 import { IoBarbell } from "react-icons/io5";
 

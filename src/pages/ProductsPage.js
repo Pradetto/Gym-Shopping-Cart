@@ -5,15 +5,7 @@ import ProductsSidebar from "../components/main/ProductsSidebar";
 import ProductContainer from "../components/main/ProductContainer";
 
 // CSS
-import {
-  Center,
-  Flex,
-  HStack,
-  Grid,
-  GridItem,
-  Box,
-  Container,
-} from "@chakra-ui/react";
+import { Flex, Grid, GridItem } from "@chakra-ui/react";
 
 function Products() {
   return (
