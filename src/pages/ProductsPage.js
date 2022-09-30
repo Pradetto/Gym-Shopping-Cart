@@ -1,33 +1,28 @@
-import React, { Fragment } from "react";
+import React from "react";
 
-//Components
-import ProductsSidebar from "../components/main/ProductsSidebar";
-import ProductContainer from "../components/main/ProductContainer";
+// Compoennts
+import ProductFilterPage from "./ProductFilterPage";
 
 // CSS
 import { Flex, Grid, GridItem } from "@chakra-ui/react";
 
+// React-Router
+import { Routes, Route } from "react-router-dom";
+
 function Products() {
   return (
-    <Fragment>
-      {/* Desktop View side-by-side */}
-      <Flex display={["none", "flex", "flex"]}>
-        <Grid gridTemplateColumns={"228px 1fr"}>
-          <GridItem>
-            <ProductsSidebar />
-          </GridItem>
-          <GridItem>
-            <ProductContainer />
-          </GridItem>
-        </Grid>
-      </Flex>
-
-      {/* Mobile View Up and Down */}
-      <Flex minW={"full"} display={["flex", "none", "none"]} flexDir="column">
-        <ProductsSidebar w="full" />
-        <ProductContainer />
-      </Flex>
-    </Fragment>
+    <Routes>
+      <Route path="" element={<ProductFilterPage />} />
+      <Route path="/:categoryId/*" element={<ProductFilterPage />} />
+      <Route
+        path="/:categoryId/:subcategoryId/*"
+        element={<ProductFilterPage />}
+      />
+      <Route
+        path="/:categoryId/:subcategoryId/:productId"
+        element={<ProductFilterPage />}
+      />
+    </Routes>
   );
 }
 
