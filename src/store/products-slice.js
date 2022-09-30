@@ -38,7 +38,9 @@ const productsSlice = createSlice({
         //     return [category.category];
         //   }
         // );
-        state.products = action.payload[0];
+
+        state.products = [action.payload[0]];
+        state.categories = [action.payload[1]];
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = "failed";
@@ -54,3 +56,21 @@ export const getProductsStatus = (state) => state.products.status;
 export const productsActions = productsSlice.actions;
 
 export default productsSlice;
+
+// const sampple = {
+//   category: {
+//     name: "Apparel",
+//     subcategories: [
+//       {
+//         subcategory: {
+//           name: "Shirts",
+//           products: [
+//             {
+//               productsName: "Product",
+//             },
+//           ],
+//         },
+//       },
+//     ],
+//   },
+// };
