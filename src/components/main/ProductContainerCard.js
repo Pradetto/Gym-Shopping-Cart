@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 
 // CSS
 import {
@@ -17,10 +17,10 @@ import { FiShoppingCart } from "react-icons/fi";
 import { subcategoryData } from "../../store/dummData";
 
 function ProductContainerCard(props) {
-  console.log("Props data made it", props.data());
+  console.log("type", typeof props.data[0].productDetails.newAdd);
   return (
     <Flex wrap={"wrap"}>
-      {subcategoryData.map((item) => (
+      {props.data.map((item) => (
         <Flex
           p={4}
           alignItems="center"
@@ -64,7 +64,7 @@ function ProductContainerCard(props) {
                     New
                   </Badge>
                 )}
-                {!item.productDetails.newAdd && (
+                {item.productDetails.newAdd && (
                   <Badge
                     rounded="full"
                     px="2"

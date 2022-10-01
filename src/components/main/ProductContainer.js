@@ -25,26 +25,56 @@ function ProductContainer() {
   const products = useSelector(getAllProducts);
   const status = useSelector(getProductsStatus);
   const params = useParams();
-  const [currentData, setCurrentData] = useState();
+  // const [currentData, setCurrentData] = useState();
+  const [sortFilter, setSortFilter] = useState(null);
 
-  function filteredData() {
+  const filteredData = () => {
     if (params.productId) {
-      return products.filter((item) => item.category === params.categoryId);
+      setSortFilter({
+        productId: params.productId,
+        categoryId: null,
+        allProducts: false,
+        subcategoryId: null,
+      });
+      // return products.filter((item) => item.category === params.categoryId);
       // console.log(params.categoryId, params.subcategoryId, params.productId);
     } else if (params.subcategoryId) {
-      console.log(params.subcategoryId, params.productId);
+      setSortFilter({
+        subcategoryId: params.subcategoryId,
+        productId: params.productId,
+        categoryId: null,
+        allProducts: false,
+      });
     } else if (params.categoryId) {
-      return products.filter((item) => item.category === params.categoryId);
+      setSortFilter({
+        subcategoryId: params.subcategoryId,
+        productId: params.productId,
+        categoryId: params.categoryId,
+        allProducts: false,
+      });
+      // return products.filter((item) => item.category === params.categoryId);
     } else {
-      return products;
+      setSortFilter({
+        subcategoryId: null,
+        productId: null,
+        categoryId: null,
+        allProducts: true,
+      });
+      // return products;
     }
-  }
+  };
+  console.log("products data", products);
+  // useEffect(() => {
+  //   if (params) {
+  //     filteredData();
+  //   }
+  // }, [params]);
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  return <ProductContainerCard data={filteredData} />;
+  return <ProductContainerCard data={products} filters={sortFilter} />;
 }
 
 export default ProductContainer;
