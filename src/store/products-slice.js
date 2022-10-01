@@ -9,7 +9,8 @@ export const fetchProducts = createAsyncThunk("api/all-products/", async () => {
     const productsData = await productsResponse.json();
     const categoriesResponse = await fetch(CATEGORIES_URL);
     const categoriesData = await categoriesResponse.json();
-    return [...productsData, ...categoriesData];
+    console.log("Hereeee", productsData);
+    return [productsData, categoriesData];
   } catch (err) {
     return err.message;
   }
@@ -38,8 +39,9 @@ const productsSlice = createSlice({
         //     return [category.category];
         //   }
         // );
-
+        console.log("payload", action.payload[0]);
         state.products = [action.payload[0]];
+
         state.categories = [action.payload[1]];
       })
       .addCase(fetchProducts.rejected, (state, action) => {
