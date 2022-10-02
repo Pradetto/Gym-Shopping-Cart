@@ -27,6 +27,11 @@ function ProductContainer() {
   const params = useParams();
   // const [currentData, setCurrentData] = useState();
   const [sortFilter, setSortFilter] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+
+  // if (products) {
+  //   setLoading(false);
+  // }
 
   const filteredData = () => {
     if (params.productId) {
@@ -63,18 +68,19 @@ function ProductContainer() {
       // return products;
     }
   };
-  console.log("products data", products);
-  // useEffect(() => {
-  //   if (params) {
-  //     filteredData();
-  //   }
-  // }, [params]);
 
+  // console.log("products data", products);
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts()).then(setLoading(false));
   }, [dispatch]);
 
-  return <ProductContainerCard data={products} filters={sortFilter} />;
+  return (
+    <Fragment>
+      {!isLoading && (
+        <ProductContainerCard data={products} filters={sortFilter} />
+      )}
+    </Fragment>
+  );
 }
 
 export default ProductContainer;

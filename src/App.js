@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 
 // Components
 import HomePage from "./pages/HomePage";
@@ -9,6 +9,10 @@ import ProductsPage from "./pages/ProductsPage";
 // Router
 import { Routes, Route, Navigate, useRoutes } from "react-router-dom";
 
+// Redux
+import { fetchProducts } from "./store/products-slice";
+import { useDispatch } from "react-redux";
+
 // Components
 // import Header from "./components/header/Header";
 // import Main from "./components/main/Main";
@@ -18,7 +22,11 @@ import { Routes, Route, Navigate, useRoutes } from "react-router-dom";
 import { Grid, GridItem } from "@chakra-ui/react";
 
 function App() {
+  // const dispatch = useDispatch();
   // ******************************** DONT FORGET TO ADD SUSPENSE AND REACT.LAZY **************************
+  // useEffect(() => {
+  //   dispatch(fetchProducts());
+  // }, [dispatch]);
   return (
     <Fragment>
       <Grid templateRows="80px 1fr">

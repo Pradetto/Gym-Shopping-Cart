@@ -19,9 +19,24 @@ export const fetchProducts = createAsyncThunk("api/all-products/", async () => {
 const initialState = {
   categories: [],
   subcategories: [],
-  products: [],
-  status: "idle",
-  error: null,
+  products: [
+    {
+      category: "",
+      id: 1,
+      productDetails: {
+        colors: [],
+        dateCreated: "",
+        imageOne: "",
+        imageThree: "",
+        imageTwo: "",
+        newAdd: false,
+        price: 1,
+        productId: 0.08898430390967837,
+        productName: "",
+      },
+      subcategory: "",
+    },
+  ],
 };
 const productsSlice = createSlice({
   name: "products",
