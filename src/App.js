@@ -22,11 +22,6 @@ import { useDispatch } from "react-redux";
 import { Grid, GridItem } from "@chakra-ui/react";
 
 function App() {
-  // const dispatch = useDispatch();
-  // ******************************** DONT FORGET TO ADD SUSPENSE AND REACT.LAZY **************************
-  // useEffect(() => {
-  //   dispatch(fetchProducts());
-  // }, [dispatch]);
   return (
     <Fragment>
       <Grid templateRows="80px 1fr">

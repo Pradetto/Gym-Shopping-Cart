@@ -1,11 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
+// redux
+import { useSelector } from "react-redux";
 
 // Components
 import SidebarPrimaryHeading from "./SidebarPrimaryHeading";
 import SidebarSecondaryHeading from "./SidebarSecondaryHeading";
 
-// Dummy Data
-import { categoryData, subcategoryData } from "../../store/dummData";
+// Redux
+import {
+  fetchProducts,
+  getAllCategories,
+  getAllProducts,
+  getProductsStatus,
+  productsActions,
+  selectAllCategories,
+} from "../../store/products-slice";
 
 // CSS
 import {
@@ -19,27 +28,42 @@ import {
   Text,
   HStack,
 } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 
 function ProductSidebarDesktop() {
+  const reduxCategory = useSelector(getAllCategories);
+  const params = useParams();
+
   return (
     <VStack w={"full"}>
       <VStack my={18}>
         <Heading as="h3" size="md" textAlign={"left"} w={"full"}>
           Shop/
         </Heading>
-        <Heading as={"h3"} size="lg" textAlign="center" w={"full"}>
-          All Products
+        <Heading
+          as={"h3"}
+          size="lg"
+          textAlign="center"
+          w={"full"}
+          textTransform={"capitalize"}
+        >
+          {params.categoryId
+            ? params.subcategoryId
+              ? params.subcategoryId
+              : params.categoryId
+            : "View All"}
         </Heading>
       </VStack>
 
-      <UnorderedList w={"100px"} listStyleType="none">
-        {categoryData.map((item) => (
+      <UnorderedList w={"160px"} listStyleType="none">
+        {reduxCategory.map((item) => (
           <SidebarPrimaryHeading
             as="li"
             key={item.categoryId}
             textColor="black"
             w={"full"}
             text={item.category}
+            to={`/products/${item.category.toLowerCase()}`}
           >
             <UnorderedList
               key={item.categoryId}
@@ -47,18 +71,22 @@ function ProductSidebarDesktop() {
               m={0}
               p={0}
             >
-              {item.subcategories.map((item) => (
+              {item.subcategories.map((subItem) => (
                 <SidebarSecondaryHeading
-                  key={item.subcategoryId}
-                  id={item.subcategoryId}
+                  key={subItem.subcategoryId}
+                  id={subItem.subcategoryId}
+                  to={`/products/${item.category.toLowerCase()}/${subItem.subcategory.toLowerCase()}`}
                 >
-                  {item.subcategory}
+                  {subItem.subcategory}
                 </SidebarSecondaryHeading>
               ))}
             </UnorderedList>
           </SidebarPrimaryHeading>
         ))}
-        <SidebarPrimaryHeading text="View All"></SidebarPrimaryHeading>
+        <SidebarPrimaryHeading
+          text="View All"
+          to={"/products/"}
+        ></SidebarPrimaryHeading>
       </UnorderedList>
     </VStack>
   );
