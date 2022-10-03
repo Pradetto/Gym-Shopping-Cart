@@ -51,7 +51,7 @@ function ProductSidebarDesktop() {
             ? params.subcategoryId
               ? params.subcategoryId
               : params.categoryId
-            : "View All"}
+            : "All Products"}
         </Heading>
       </VStack>
 

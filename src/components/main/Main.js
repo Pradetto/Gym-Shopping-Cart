@@ -1,4 +1,5 @@
 import { useState, Fragment } from "react";
+import { NavLink as RouterLink } from "react-router-dom";
 
 // Components
 import VideoButton from "../UI/VideoButton";
@@ -18,6 +19,7 @@ import {
   VStack,
   Heading,
   Button,
+  Link,
 } from "@chakra-ui/react";
 
 const Main = () => {
@@ -78,7 +80,9 @@ const Main = () => {
             >
               Own who you are.
             </Heading>
-            <Button _active={{ transform: "scale(.95)" }}>Shop Now</Button>
+            <Link as={RouterLink} to="/products">
+              <Button _active={{ transform: "scale(.95)" }}>Shop Now</Button>
+            </Link>
             <Flex justifyContent="center">
               <Container>
                 <VideoButton
