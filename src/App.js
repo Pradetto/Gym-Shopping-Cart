@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 
 // Components
 import HomePage from "./pages/HomePage";
@@ -7,11 +7,7 @@ import ProductsPage from "./pages/ProductsPage";
 // import Footer from "./components/footer/Footer";
 
 // Router
-import { Routes, Route, Navigate, useRoutes } from "react-router-dom";
-
-// Redux
-import { fetchProducts } from "./store/products-slice";
-import { useDispatch } from "react-redux";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // Components
 // import Header from "./components/header/Header";

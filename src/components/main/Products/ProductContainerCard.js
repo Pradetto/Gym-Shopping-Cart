@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { Link as RouteLink } from "react-router-dom";
 
 // Redux
 import { useSelector } from "react-redux";
@@ -6,14 +7,7 @@ import { useSelector } from "react-redux";
 // Router
 import { useParams } from "react-router-dom";
 
-import {
-  fetchProducts,
-  getAllCategories,
-  getAllProducts,
-  getProductsStatus,
-  productsActions,
-  selectAllCategories,
-} from "../../store/products-slice";
+import { getAllProducts } from "../../../store/products-slice";
 
 // CSS
 import {
@@ -24,9 +18,10 @@ import {
   Badge,
   Icon,
   chakra,
+  Link,
   Tooltip,
 } from "@chakra-ui/react";
-import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+// import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
 
 function ProductContainerCard(props) {
@@ -186,7 +181,12 @@ function ProductContainerCard(props) {
                     </Box>
                     {item.productDetails.price.toFixed(2)}
                   </Box>
-                  <Box>Details</Box>
+                  <Link
+                    as={RouteLink}
+                    to={`/products/${item.category}/${item.subcategory}/${item.productDetails.productName}/details`}
+                  >
+                    <Box>Details</Box>
+                  </Link>
                 </Flex>
               </Box>
             </Box>

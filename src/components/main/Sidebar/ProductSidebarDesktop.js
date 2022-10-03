@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React from "react";
 // redux
 import { useSelector } from "react-redux";
 
@@ -7,27 +7,10 @@ import SidebarPrimaryHeading from "./SidebarPrimaryHeading";
 import SidebarSecondaryHeading from "./SidebarSecondaryHeading";
 
 // Redux
-import {
-  fetchProducts,
-  getAllCategories,
-  getAllProducts,
-  getProductsStatus,
-  productsActions,
-  selectAllCategories,
-} from "../../store/products-slice";
+import { getAllCategories } from "../../../store/products-slice";
 
 // CSS
-import {
-  Center,
-  Flex,
-  Heading,
-  UnorderedList,
-  ListItem,
-  Box,
-  VStack,
-  Text,
-  HStack,
-} from "@chakra-ui/react";
+import { Heading, UnorderedList, VStack } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 function ProductSidebarDesktop() {

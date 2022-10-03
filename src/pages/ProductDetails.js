@@ -1,11 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Routes, Route } from "react-router-dom";
+import ProductDetail from "../components/main/ProductDetail";
 
+// NOT BEING USED RIGHT NOW
 function ProductDetails() {
   return (
-    <div>
-      Here is the Carousel:{" "}
-      <a href="https://chakra-templates.dev/page-sections/carousels">Carosel</a>
-    </div>
+    <Routes>
+      <Route
+        path="/:categoryId/:subcategoryId/:productId/details"
+        element={<ProductDetail />}
+      />
+    </Routes>
   );
 }
 export default ProductDetails;

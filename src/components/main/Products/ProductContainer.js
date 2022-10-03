@@ -6,24 +6,14 @@ import ProductContainerCard from "./ProductContainerCard";
 // Redux
 import { useSelector, useDispatch } from "react-redux";
 
-import {
-  fetchProducts,
-  getAllCategories,
-  getAllProducts,
-  getProductsStatus,
-  productsActions,
-  selectAllCategories,
-} from "../../store/products-slice";
-
-// Router
-import { useParams } from "react-router-dom";
+import { fetchProducts } from "../../../store/products-slice";
 
 // CSS
 import { Spinner, Text, VStack, Center } from "@chakra-ui/react";
 
 function ProductContainer() {
   const dispatch = useDispatch();
-  const status = useSelector(getProductsStatus);
+  // const status = useSelector(getProductsStatus);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {

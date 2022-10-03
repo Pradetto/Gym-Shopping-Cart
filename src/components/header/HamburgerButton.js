@@ -2,7 +2,7 @@ import React from "react";
 import { Link as ReachLink } from "react-router-dom";
 
 // CSS
-import { Button, Link, Flex, Center } from "@chakra-ui/react";
+import { Button, Link, Center } from "@chakra-ui/react";
 
 function HamburgerButton(props) {
   const actionHandler = () => {

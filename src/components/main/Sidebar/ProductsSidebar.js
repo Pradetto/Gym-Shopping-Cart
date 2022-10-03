@@ -5,16 +5,7 @@ import ProductSidebarDesktop from "./ProductSidebarDesktop";
 import ProductSidebarMobile from "./ProductSidebarMobile";
 
 // CSS
-import {
-  Flex,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  Button,
-  Center,
-  Heading,
-} from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 function ProductsSidebar() {
   // How to get the currently selected? Maybe the URL???

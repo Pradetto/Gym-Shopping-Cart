@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 
 //Components
-import ProductsSidebar from "../components/main/ProductsSidebar";
-import ProductContainer from "../components/main/ProductContainer";
+import ProductsSidebar from "../components/main/Sidebar/ProductsSidebar";
+import ProductContainer from "../components/main/Products/ProductContainer";
 
 // CSS
 import { Flex, Grid, GridItem } from "@chakra-ui/react";

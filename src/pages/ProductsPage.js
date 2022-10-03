@@ -2,9 +2,9 @@ import React from "react";
 
 // Compoennts
 import ProductFilterPage from "./ProductFilterPage";
+import ProductDetail from "../components/main/Products/ProductDetail";
 
 // CSS
-import { Flex, Grid, GridItem } from "@chakra-ui/react";
 
 // React-Router
 import { Routes, Route } from "react-router-dom";
@@ -12,6 +12,7 @@ import { Routes, Route } from "react-router-dom";
 function Products() {
   return (
     <Routes>
+      {/* Main Products Page */}
       <Route path="" element={<ProductFilterPage />} />
       <Route path="/:categoryId/*" element={<ProductFilterPage />} />
       <Route
@@ -21,6 +22,11 @@ function Products() {
       <Route
         path="/:categoryId/:subcategoryId/:productId"
         element={<ProductFilterPage />}
+      />
+      {/* Products Details Page */}
+      <Route
+        path="/:categoryId/:subcategoryId/:productId/details"
+        element={<ProductDetail />}
       />
     </Routes>
   );
