@@ -41,7 +41,7 @@ export const Header = () => {
       backgroundColor="gray.300"
       w="full"
       p={2}
-      zIndex={1000000}
+      zIndex={100}
       position="fixed"
     >
       <Flex justifyContent="space-between" w={"full"} px={2}>

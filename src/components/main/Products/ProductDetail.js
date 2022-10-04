@@ -1,13 +1,37 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 // Components
 import Carousel from "./ProductDetailCarousel";
-import ProductDetailsForm from "./ProductDetailsForm";
+import ProductDetailsForm from "../ProductDetailForm/ProductDetailsForm";
+
+//Redux & Router
+import { getAllProducts } from "../../../store/products-slice";
+import { useParams } from "react-router-dom";
 
 // CSS
 import { Grid, GridItem } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 
 function ProductDetail() {
+  const [item, setItem] = useState({
+    category: "A",
+    subcategory: "A",
+    productDetails: {
+      productName: "A",
+    },
+  });
+  const productsData = useSelector(getAllProducts);
+  const params = useParams();
+
+  useEffect(() => {
+    const product = productsData.filter((items) => {
+      return items.productDetails.productName === params.productId;
+    });
+    setItem(product[0]);
+  }, [params, productsData]);
+  if (item.product) {
+    console.log("Successfully filtered", item.productDetails.productName);
+  }
   return (
     <Fragment>
       {/* // Desktop */}
@@ -18,10 +42,10 @@ function ProductDetail() {
         display={["none", "none", "grid"]}
       >
         <GridItem maxW={"50vw"} p={5} my={5}>
-          <Carousel />
+          <Carousel item={item} />
         </GridItem>
         <GridItem maxW={"50vw"} p={5}>
-          <ProductDetailsForm />
+          <ProductDetailsForm item={item} />
         </GridItem>
       </Grid>
 
@@ -32,10 +56,10 @@ function ProductDetail() {
         display={["block", "block", "none"]}
       >
         <GridItem maxW={"100vw"}>
-          <Carousel />
+          <Carousel item={item} />
         </GridItem>
-        <GridItem maxW={"100vw"}>
-          <ProductDetailsForm />
+        <GridItem maxW={"100vw"} justifyContent={"Center"}>
+          <ProductDetailsForm item={item} />
         </GridItem>
       </Grid>
     </Fragment>

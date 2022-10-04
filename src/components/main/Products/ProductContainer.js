@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import ProductContainerCard from "./ProductContainerCard";
 
 // Redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { fetchProducts } from "../../../store/products-slice";
 
