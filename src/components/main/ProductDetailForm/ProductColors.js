@@ -27,11 +27,15 @@ function ProductColors(props) {
         <Wrap>
           {colors.map((c) => (
             <WrapItem
-              border={"1px solid gray"}
+              border={"1px solid #EEEEEE"}
               p={1}
               minW={75}
               minH={75}
               cursor="pointer"
+              key={c}
+              _hover={{
+                border: "1px solid black",
+              }}
             >
               <Center
                 w={"full"}

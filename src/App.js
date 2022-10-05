@@ -16,6 +16,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 // CSS
 // import { Flex } from "@chakra-ui/react";
 import { Grid, GridItem } from "@chakra-ui/react";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/" element={<Navigate replace to="/home" />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/products/*" element={<ProductsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </GridItem>
       </Grid>

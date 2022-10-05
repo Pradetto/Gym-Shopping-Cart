@@ -95,7 +95,8 @@ function ProductContainerCard(props) {
             {/* w='full' I removed this */}
             <Box
               bg={"white"}
-              maxW="22rem" // originally was sm
+              w="19rem" // originally was sm
+              h={"32rem"} // NEW ADD HAD NO HEIGHT
               borderWidth="1px"
               rounded="lg"
               shadow="lg"
@@ -115,7 +116,10 @@ function ProductContainerCard(props) {
                 src={item.productDetails.imageOne}
                 alt={`Picture of ${item.productDetails.productName}`}
                 roundedTop="lg"
-                w={"full"}
+                // ALL THESE ARE NEW BELOW
+                minWidth={"18.9rem"}
+                maxWidth={"18.9rem"}
+                minH={"22rem"}
                 maxH={"22rem"}
               />
 
@@ -185,7 +189,7 @@ function ProductContainerCard(props) {
                     as={RouteLink}
                     to={`/products/${item.category}/${item.subcategory}/${item.productDetails.productName}/details`}
                   >
-                    <Box>Details</Box>
+                    <Box p={1}>See More</Box>
                   </Link>
                 </Flex>
               </Box>

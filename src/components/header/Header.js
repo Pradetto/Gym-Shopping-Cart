@@ -43,6 +43,7 @@ export const Header = () => {
       p={2}
       zIndex={100}
       position="fixed"
+      boxShadow={"xl"}
     >
       <Flex justifyContent="space-between" w={"full"} px={2}>
         <Flex

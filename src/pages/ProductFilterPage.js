@@ -12,8 +12,12 @@ function ProductFilterPage() {
     <Fragment>
       {/* Desktop View side-by-side */}
       <Flex display={["none", "flex", "flex"]}>
-        <Grid gridTemplateColumns={"228px 1fr"}>
-          <GridItem>
+        <Grid gridTemplateColumns={"268px 1fr"} gridTemplateRows={"1fr"}>
+          <GridItem
+            backgroundColor={"#F8F8F8"}
+            minH={"100vh"}
+            boxShadow={"dark-lg"}
+          >
             <ProductsSidebar />
           </GridItem>
           <GridItem>

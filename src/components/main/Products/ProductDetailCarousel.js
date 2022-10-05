@@ -38,7 +38,7 @@ function Carousel(props) {
   return (
     <Box
       position={"relative"}
-      height={"675px"}
+      height={"620px"}
       width={"full"}
       overflow={"hidden"}
     >
@@ -57,7 +57,7 @@ function Carousel(props) {
       {/* Left Icon */}
       <IconButton
         aria-label="left-arrow"
-        colorScheme="messenger"
+        colorScheme="facebook"
         borderRadius="full"
         position="absolute"
         left={side}
@@ -71,7 +71,8 @@ function Carousel(props) {
       {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
-        colorScheme="messenger"
+        // color="limegreen"
+        colorScheme="facebook"
         borderRadius="full"
         position="absolute"
         right={side}
@@ -85,7 +86,13 @@ function Carousel(props) {
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {images.map((url, index) => (
-          <Image boxSize="675px" objectFit="fit" src={url} alt="Dan Abramov" />
+          <Image
+            key={index}
+            boxSize="675px"
+            objectFit="fit"
+            src={url}
+            alt="Product Image"
+          />
           // <Box
           //   key={index}
           //   height={"6xl"}
