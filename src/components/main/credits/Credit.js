@@ -14,6 +14,9 @@ const Credit = () => {
         <a href="https://benjamincarlson.medium.com/create-a-hamburger-menu-using-chakra-ui-a-practical-example-of-javascripts-usestate-fb087e100b22">
           Navbar
         </a>
+        <a href="https://coolwallpapers.me/picsup/5635383-fitness-wallpapers.jpg">
+          Contact Page
+        </a>
       </li>
     </ul>
   );

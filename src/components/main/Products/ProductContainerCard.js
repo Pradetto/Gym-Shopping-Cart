@@ -84,7 +84,7 @@ function ProductContainerCard(props) {
 
   return (
     <Fragment>
-      <Flex wrap={"wrap"}>
+      <Flex wrap={"wrap"} ml={6} mt={6}>
         {filteredData.map((item) => (
           <Flex
             p={4}

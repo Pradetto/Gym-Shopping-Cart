@@ -19,19 +19,7 @@ import {
 } from "@chakra-ui/react";
 import React, { Fragment, useState } from "react";
 import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from "react-icons/bs";
-import { MdContactMail, MdEmail, MdOutlineEmail } from "react-icons/md";
-
-const confetti = {
-  light: {
-    primary: "4299E1", // blue.400
-    secondary: "BEE3F8", // blue.100
-  },
-
-  dark: {
-    primary: "1A365D", // blue.900
-    secondary: "2A4365", // blue.800
-  },
-};
+import { MdEmail, MdOutlineEmail } from "react-icons/md";
 
 const CONFETTI_DARK = `url("https://coolwallpapers.me/picsup/5635383-fitness-wallpapers.jpg")`;
 

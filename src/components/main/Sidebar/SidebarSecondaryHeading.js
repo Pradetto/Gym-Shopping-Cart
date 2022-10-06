@@ -26,6 +26,7 @@ function SidebarSecondaryHeading(props) {
           border: "3px dotted #ff7a59",
           color: "#ff7a59",
           background: "#fff",
+          textDecoration: "none",
         }}
         cursor={"pointer"}
       >
