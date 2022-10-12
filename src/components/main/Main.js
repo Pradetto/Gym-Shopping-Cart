@@ -47,7 +47,7 @@ const Main = () => {
           ) : (
             <Box
               minW="100%"
-              minH="101%"
+              minH="103%"
               as="video"
               src={VideoBackground}
               muted={toggleMute ? "True" : ""}

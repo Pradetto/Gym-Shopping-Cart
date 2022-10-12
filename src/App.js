@@ -4,6 +4,9 @@ import { Fragment } from "react";
 import HomePage from "./pages/HomePage";
 import Header from "./components/header/Header";
 import ProductsPage from "./pages/ProductsPage";
+import SignUpPage from "./pages/SignUpPage";
+import ContactPage from "./pages/ContactPage";
+import LoginPage from "./pages/LoginPage";
 // import Footer from "./components/footer/Footer";
 
 // Router
@@ -16,7 +19,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 // CSS
 // import { Flex } from "@chakra-ui/react";
 import { Grid, GridItem } from "@chakra-ui/react";
-import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/products/*" element={<ProductsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
         </GridItem>
       </Grid>

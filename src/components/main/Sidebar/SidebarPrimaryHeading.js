@@ -26,10 +26,3 @@ function SidebarPrimaryHeading(props) {
 }
 
 export default SidebarPrimaryHeading;
-
-// _activeLink={{
-//   fontWeight: "bold",
-//   textDecoration: "underline",
-//   transform: "scale(1.15)",
-//   color: "#DCDCDC",
-// }}

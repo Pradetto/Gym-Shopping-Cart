@@ -36,7 +36,7 @@ function ContactPage() {
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
         width: "100%",
-        height: "100vh",
+        height: "93vh",
         backgroundSize: "cover",
         backgroundPosition: "left", // toggle this to center if I want the background image to drag
       }}
