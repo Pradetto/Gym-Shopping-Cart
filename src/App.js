@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 // Components
 import HomePage from "./pages/HomePage";
@@ -7,6 +7,7 @@ import ProductsPage from "./pages/ProductsPage";
 import SignUpPage from "./pages/SignUpPage";
 import ContactPage from "./pages/ContactPage";
 import LoginPage from "./pages/LoginPage";
+import ShoppingCartModal from "./components/cart/ShoppingCartModal";
 // import Footer from "./components/footer/Footer";
 
 // Router
@@ -18,14 +19,27 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 // CSS
 // import { Flex } from "@chakra-ui/react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, useDisclosure } from "@chakra-ui/react";
 
 function App() {
+  const [cartDisplay, setCartDisplay] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // const cartDisplayHandler = () => {
+  //   setCartDisplay(true);
+  // };
+  // const cartNotDisplayHandler = () => {
+  //   setCartDisplay(false);
+  // };
   return (
     <Fragment>
       <Grid templateRows="80px 1fr">
         <GridItem>
-          <Header />
+          <Header
+            cartDisplay={isOpen}
+            cartDisplayHandler={onOpen}
+            cartNotDisplayHandler={onClose}
+          />
         </GridItem>
         <GridItem>
           <Routes>
@@ -38,6 +52,9 @@ function App() {
           </Routes>
         </GridItem>
       </Grid>
+      {isOpen && (
+        <ShoppingCartModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+      )}
       {/* Make a dynamic footer one for the home page then one for the rest and I can put a link to the credits from there */}
       {/* <Footer /> */}
     </Fragment>

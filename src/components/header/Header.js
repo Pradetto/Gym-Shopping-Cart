@@ -11,7 +11,7 @@ import { Flex, Link, Heading, Box } from "@chakra-ui/react";
 
 import { IoBarbell } from "react-icons/io5";
 
-export const Header = () => {
+export const Header = (props) => {
   const [display, setChangeDisplay] = useState("none");
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Need to update
   const [hasFavorites, setHasFavorites] = useState(false);
@@ -62,6 +62,9 @@ export const Header = () => {
           isLoggedIn={isLoggedIn}
           hasFavorites={hasFavorites}
           isFavoritesHandler={isFavoritesHandler}
+          cartDisplay={props.cartDisplay}
+          cartDisplayHandler={props.cartDisplayHandler}
+          cartNotDisplayHandler={props.cartNotDisplayHandler}
         />
         <MobileContent changeDisplay={setFlexDisplayHandler} />
       </Flex>
@@ -75,6 +78,9 @@ export const Header = () => {
         isLoggedIn={isLoggedIn}
         hasFavorites={hasFavorites}
         isFavoritesHandler={isFavoritesHandler}
+        cartDisplay={props.cartDisplay}
+        cartDisplayHandler={props.cartDisplayHandler}
+        cartNotDisplayHandler={props.cartNotDisplayHandler}
       />
     </Flex>
   );
