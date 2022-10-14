@@ -36,7 +36,13 @@ function ShoppingCartModal(props) {
           <ModalHeader>Shopping Cart:</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Flex alignItems={"center"} justifyContent={"space-between"}>
+            <Flex
+              alignItems={"center"}
+              justifyContent={"space-between"}
+              borderBottom={"2px solid #8a2b06"}
+              padding={2}
+              borderRadius={2}
+            >
               <HStack>
                 <Box>Image</Box>
                 <VStack alignItems={"flex-start"}>
@@ -60,8 +66,8 @@ function ShoppingCartModal(props) {
           <ModalFooter gap={2}>
             <VStack w={"full"}>
               <Flex justifyContent={"space-between"} w={"full"}>
-                <Box>Total Amount:</Box>
-                <Box>$109.99</Box>
+                <Box fontWeight={"bold"}>Total Amount:</Box>
+                <Box fontWeight={"bold"}>$109.99</Box>
               </Flex>
               <HStack w={"full"} justifyContent={"flex-end"}>
                 <Button onClick={props.onClose}>Close</Button>
