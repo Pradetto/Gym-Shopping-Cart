@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 //redux
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import cartActions from "../../store/cart-slice";
 
 import {
@@ -23,6 +23,7 @@ import {
 function ShoppingCartModal(props) {
   const dispatch = useDispatch();
   const btnRef = React.useRef(null);
+  const items = useSelector((state) => state.cart.items);
   return (
     <>
       <Modal
@@ -37,30 +38,35 @@ function ShoppingCartModal(props) {
           <ModalCloseButton />
           <ModalBody>
             <Flex
-              alignItems={"center"}
-              justifyContent={"space-between"}
+              alignItems={"space-between"}
+              justifyContent={"center"}
               borderBottom={"2px solid #8a2b06"}
               padding={2}
               borderRadius={2}
+              flexDir={"column"}
             >
-              <HStack>
-                <Box>Image</Box>
-                <VStack alignItems={"flex-start"}>
-                  <Box>Product Name</Box>
-                  <HStack>
-                    <Box>$1,999.21</Box>
-                    <Box>Q: 120</Box>
+              {items.map((cartItem) => (
+                <Fragment>
+                  <HStack justifyContent={"space-between"}>
+                    <Box>Image</Box>
+                    <VStack alignItems={"flex-start"}>
+                      <Box>Product Name</Box>
+                      <HStack>
+                        <Box>$1,999.21</Box>
+                        <Box>Q: {cartItem.quantity}</Box>
+                      </HStack>
+                    </VStack>
                   </HStack>
-                </VStack>
-              </HStack>
-              <HStack>
-                <Button
-                  onClick={() => dispatch(cartActions.decrementItemByOne)}
-                >
-                  -
-                </Button>
-                <Button>+</Button>
-              </HStack>
+                  <HStack>
+                    <Button
+                      onClick={() => dispatch(cartActions.decrementItemByOne)}
+                    >
+                      -
+                    </Button>
+                    <Button>+</Button>
+                  </HStack>
+                </Fragment>
+              ))}
             </Flex>
           </ModalBody>
           <ModalFooter gap={2}>
