@@ -24,6 +24,7 @@ function ShoppingCartModal(props) {
   const dispatch = useDispatch();
   const btnRef = React.useRef(null);
   const items = useSelector((state) => state.cart.items);
+  const test = "test 123";
   return (
     <>
       <Modal
@@ -52,7 +53,7 @@ function ShoppingCartModal(props) {
                     <VStack alignItems={"flex-start"}>
                       <Box>Product Name</Box>
                       <HStack>
-                        <Box>$1,999.21</Box>
+                        <Box>$1,999</Box>
                         <Box>Q: {cartItem.quantity}</Box>
                       </HStack>
                     </VStack>
