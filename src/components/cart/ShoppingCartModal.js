@@ -24,7 +24,7 @@ function ShoppingCartModal(props) {
   const dispatch = useDispatch();
   const btnRef = React.useRef(null);
   const items = useSelector((state) => state.cart.items);
-  const test = "test 123";
+  const quantity = useSelector((state) => state.cart.totalAmount);
   return (
     <>
       <Modal

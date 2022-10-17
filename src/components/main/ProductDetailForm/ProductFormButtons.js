@@ -4,7 +4,15 @@ import React from "react";
 import { Box, HStack, Center } from "@chakra-ui/react";
 import { AiOutlineHeart } from "react-icons/ai";
 
-function ProductFormButtons() {
+// Redux
+import { cartActions } from "../../../store/cart-slice";
+import { useDispatch } from "react-redux";
+
+function ProductFormButtons(props) {
+  const dispatch = useDispatch();
+  // const cartHandler = () => {
+  //   dispatch(cart.addToCart(props.item));
+  // };
   return (
     <HStack spacing={5}>
       <Box
@@ -14,6 +22,7 @@ function ProductFormButtons() {
         w={"80%"}
         h={50}
         fontWeight={"bold"}
+        onClick={() => dispatch(cartActions.addToCart({ item: props.item }))}
       >
         ADD TO BAG
       </Box>

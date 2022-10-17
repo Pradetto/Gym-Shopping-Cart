@@ -12,6 +12,7 @@ import ProductColors from "./ProductColors";
 import ProductDescription from "./ProductDescription";
 
 function ProductDetailsForm(props) {
+  const addToCartHandler = () => {};
   return (
     <Box
       maxW={"75%"}
@@ -26,7 +27,7 @@ function ProductDetailsForm(props) {
       <ProductNamePrice item={props.item} />
       <ProductColors item={props.item} />
       <ProductSizes item={props.item} />
-      <ProductFormButtons />
+      <ProductFormButtons item={props.item} />
     </Box>
   );
 }
