@@ -22,7 +22,7 @@ function ProductFormButtons(props) {
         w={"80%"}
         h={50}
         fontWeight={"bold"}
-        onClick={() => dispatch(cartActions.addToCart({ item: props.item }))}
+        onClick={() => props.addToCartHandler()}
       >
         ADD TO BAG
       </Box>

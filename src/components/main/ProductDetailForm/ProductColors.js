@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Box, Center, Text, Wrap, WrapItem } from "@chakra-ui/react";
 
 function ProductColors(props) {
-  const [color, setColor] = useState(null);
+  const { color, colorHandler } = props;
+
   const colors = [
     "pink",
     "red",
@@ -40,7 +41,7 @@ function ProductColors(props) {
               <Center
                 w={"full"}
                 h={"full"}
-                onClick={() => setColor(c)}
+                onClick={() => colorHandler(c)}
                 backgroundColor={c}
               ></Center>
             </WrapItem>

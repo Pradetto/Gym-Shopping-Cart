@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+
+//Redux
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../store/cart-slice";
 
 // Components
 import Mapping from "./Mapping";
@@ -12,7 +16,24 @@ import ProductColors from "./ProductColors";
 import ProductDescription from "./ProductDescription";
 
 function ProductDetailsForm(props) {
-  const addToCartHandler = () => {};
+  const dispatch = useDispatch();
+  const [color, setColor] = useState(null);
+  const [size, setSize] = useState(null);
+
+  const addToCartHandler = () => {
+    if (!color || !size) {
+      // THROW AN ERROR
+      return;
+    }
+    dispatch(cartActions.addToCart({ item: { ...props.item, color, size } }));
+  };
+
+  const sizeHandler = (size) => {
+    setSize(size);
+  };
+  const colorHandler = (color) => {
+    setColor(color);
+  };
   return (
     <Box
       maxW={"75%"}
@@ -25,9 +46,16 @@ function ProductDetailsForm(props) {
     >
       <Mapping />
       <ProductNamePrice item={props.item} />
-      <ProductColors item={props.item} />
-      <ProductSizes item={props.item} />
-      <ProductFormButtons item={props.item} />
+      <ProductColors
+        item={props.item}
+        colorHandler={colorHandler}
+        color={color}
+      />
+      <ProductSizes item={props.item} sizeHandler={sizeHandler} size={size} />
+      <ProductFormButtons
+        item={props.item}
+        addToCartHandler={addToCartHandler}
+      />
     </Box>
   );
 }

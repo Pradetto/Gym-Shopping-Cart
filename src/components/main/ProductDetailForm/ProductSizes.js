@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Box, Center, Text, Wrap, WrapItem } from "@chakra-ui/react";
 
 function ProductSizes(props) {
-  const [size, setSize] = useState(null);
+  const { size, sizeHandler } = props;
   const apparelSizes = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
   const shoeSizes = [
     "6",
@@ -22,7 +22,6 @@ function ProductSizes(props) {
     "12.5",
     "13",
   ];
-  console.log(props.item.category);
   return (
     <Box my={5}>
       <Text fontSize={"xs"}>
@@ -44,7 +43,7 @@ function ProductSizes(props) {
                   border: "1px solid black",
                 }}
               >
-                <Center w={"full"} h={"full"} onClick={() => setSize(s)}>
+                <Center w={"full"} h={"full"} onClick={() => sizeHandler(s)}>
                   {s}
                 </Center>
               </WrapItem>
@@ -62,7 +61,7 @@ function ProductSizes(props) {
                   border: "1px solid black",
                 }}
               >
-                <Center w={"full"} h={"full"} onClick={() => setSize(s)}>
+                <Center w={"full"} h={"full"} onClick={() => sizeHandler(s)}>
                   {s}
                 </Center>
               </WrapItem>
