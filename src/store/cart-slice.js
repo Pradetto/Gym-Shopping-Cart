@@ -27,13 +27,11 @@ const cartSlice = createSlice({
           quantity: 1,
           size: action.payload.item.size,
           color: action.payload.item.color,
-          // subTotal: action.payload.item.productDetails.price,
           index: state.items.length,
         });
         state.totalAmount += action.payload.item.productDetails.price;
       } else {
         state.items[index].quantity += 1;
-        // state.items[index].subTotal = action.payload.item.productDetails.price;
         state.totalAmount += action.payload.item.productDetails.price;
       }
     },
@@ -54,17 +52,14 @@ const cartSlice = createSlice({
 
       // NEED TO FIX THIS LINE BELOW
       if (state.items[action.payload.index].quantity <= 0) {
-        state.items.splice(action.payload.index, 1);
-
-        const arrayFirstPart = state.items.slice(0, action.payload.index);
-        const arraySecondPart =
-          action.payload.index + 1 < state.items.length
-            ? state.items.slice(action.payload.index + 1, -1)
-            : [];
-        const updatedIndexArray = arraySecondPart.map((i) => {
-          i.index -= 1;
+        const removedArray = state.items.splice(action.payload.index, 1);
+        // console.log(removedArray);
+        const updatedArray = removedArray.map((obj, index) => {
+          return { ...obj, index: index };
         });
-        console.log(updatedIndexArray);
+        console.log(updatedArray);
+        state.items = updatedArray;
+        state.totalAmount = 0;
       }
     },
   },
