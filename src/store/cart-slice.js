@@ -1,15 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: [
-    // {
-    //   id: 0.08898430390967837,
-    //   size: 12,
-    //   color: "blue",
-    //   item: "hello",
-    //   quantity: 1,
-    // },
-  ],
+  items: [],
   totalAmount: 0,
 };
 
@@ -46,7 +38,10 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart(state, action) {},
-    clearCart(state, action) {},
+    clearCart(state, action) {
+      state.items = [];
+      state.totalAmount = 0;
+    },
     incrementItemByOne(state, action) {
       state.items[action.payload.index].quantity += 1;
       state.totalAmount +=
@@ -60,6 +55,16 @@ const cartSlice = createSlice({
       // NEED TO FIX THIS LINE BELOW
       if (state.items[action.payload.index].quantity <= 0) {
         state.items.splice(action.payload.index, 1);
+
+        const arrayFirstPart = state.items.slice(0, action.payload.index);
+        const arraySecondPart =
+          action.payload.index + 1 < state.items.length
+            ? state.items.slice(action.payload.index + 1, -1)
+            : [];
+        const updatedIndexArray = arraySecondPart.map((i) => {
+          i.index -= 1;
+        });
+        console.log(updatedIndexArray);
       }
     },
   },
@@ -69,3 +74,11 @@ export const items = (state) => state.items;
 export const cartActions = cartSlice.actions;
 
 export default cartSlice;
+
+// {
+//   id: 0.08898430390967837,
+//   size: 12,
+//   color: "blue",
+//   item: "hello",
+//   quantity: 1,
+// },
