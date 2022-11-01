@@ -2,7 +2,8 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Link as RouteLink } from "react-router-dom";
 
 // Redux
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { favoritesActions } from "../../../store/favorites-slice";
 
 // Router
 import { useParams } from "react-router-dom";
@@ -23,12 +24,14 @@ import {
 } from "@chakra-ui/react";
 // import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 function ProductContainerCard(props) {
   const products = useSelector(getAllProducts);
   const params = useParams();
   const [filteredData, setFilteredData] = useState([]);
   const [sortFilter, setSortFilter] = useState({});
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const data = products.filter((item) => {
@@ -159,21 +162,25 @@ function ProductContainerCard(props) {
                     {item.productDetails.productName}
                   </Box>
                   <Tooltip
-                    label="Add to cart"
+                    label="Add to favorites"
                     bg="white"
                     placement={"top"}
                     color={"gray.800"}
                     fontSize={"1.2em"}
                   >
-                    {/* Will have to update HEEEEEEERRRRREEEEEEEEEEEEEEEEE */}
-                    <chakra.a href={"#"} display={"flex"}>
+                    <Link
+                      display={"flex"}
+                      onClick={() =>
+                        dispatch(favoritesActions.addtoFavorites(item))
+                      }
+                    >
                       <Icon
-                        as={FiShoppingCart}
-                        h={7}
-                        w={7}
+                        as={AiOutlineHeart}
+                        h={8}
+                        w={8}
                         alignSelf={"center"}
                       />
-                    </chakra.a>
+                    </Link>
                   </Tooltip>
                 </Flex>
 
