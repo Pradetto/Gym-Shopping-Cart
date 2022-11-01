@@ -1,3 +1,10 @@
+//React
+import { useState } from "react";
+
+//React Router
+import { Link as RouterLink } from "react-router-dom";
+
+// CSS
 import {
   Flex,
   Box,
@@ -14,7 +21,6 @@ import {
   useColorModeValue,
   Link,
 } from "@chakra-ui/react";
-import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
 function SignUpForm() {
@@ -92,7 +98,10 @@ function SignUpForm() {
             </Stack>
             <Stack pt={6}>
               <Text align={"center"}>
-                Already a user? <Link color={"blue.400"}>Login</Link>
+                Already a user?{" "}
+                <Link color={"blue.400"} as={RouterLink} to={"/login"}>
+                  Login
+                </Link>
               </Text>
             </Stack>
           </Stack>

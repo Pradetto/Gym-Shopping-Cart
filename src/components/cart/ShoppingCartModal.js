@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 
-//redux
+//React Router
+import { Link as Router } from "react-router-dom";
+
+//Redux
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 
@@ -18,15 +21,19 @@ import {
   Modal,
   Flex,
   Center,
+  Image,
 } from "@chakra-ui/react";
+
+//Global variable
+const imageSize = "8rem";
 
 function ShoppingCartModal(props) {
   const dispatch = useDispatch();
   const btnRef = React.useRef(null);
   const items = useSelector((state) => state.cart.items);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
-  // const totalAmount = useSelector((state) => state.cart.tota)
 
+  const subtotal = +(Math.round(totalAmount + "e+2") + "e-2");
   return (
     <>
       <Modal
@@ -47,7 +54,9 @@ function ShoppingCartModal(props) {
               padding={2}
               borderRadius={2}
               flexDir={"column"}
+              gap={5}
             >
+              {items.length === 0 && <Box>No items in cart</Box>}
               {items.map((cartItem) => (
                 <Fragment
                   key={
@@ -56,48 +65,68 @@ function ShoppingCartModal(props) {
                     cartItem.color.toString()
                   }
                 >
-                  <HStack justifyContent={"space-between"}>
-                    <Box>Image</Box>
-                    <VStack alignItems={"flex-start"}>
-                      <Box>{cartItem.item.productDetails.productName}</Box>
-                      <HStack>
-                        <Box>
-                          $
-                          {Math.round(
-                            cartItem.item.productDetails.price *
-                              cartItem.quantity,
-                            2
-                          )}
-                        </Box>
+                  <HStack justifyContent={"flex-start"} minH={imageSize}>
+                    <Box
+                      maxW={imageSize}
+                      maxH={imageSize}
+                      minH={imageSize}
+                      minW={imageSize}
+                      as={"img"}
+                      src={cartItem.item.productDetails.imageOne}
+                    ></Box>
+                    <VStack alignItems={"flex-start"} minH={imageSize}>
+                      <Box fontWeight={"500"}>
+                        {cartItem.item.productDetails.productName}
+                      </Box>
+                      <HStack fontSize={"sm"}>
                         <Box>Q: {cartItem.quantity}</Box>
-                        <Box>{cartItem.color.toUpperCase()}</Box>
-                        <Box>{cartItem.size}</Box>
+                        <Box>Size: {cartItem.size}</Box>
+                      </HStack>
+                      <Box fontSize={"sm"}>
+                        Color: {cartItem.color.toUpperCase()}
+                      </Box>
+
+                      <HStack>
+                        <HStack>
+                          <Button
+                            size={"sm"}
+                            onClick={() =>
+                              dispatch(
+                                cartActions.decrementItemByOne({
+                                  index: cartItem.index,
+                                })
+                              )
+                            }
+                          >
+                            -
+                          </Button>
+                          <Button
+                            size={"sm"}
+                            onClick={() =>
+                              dispatch(
+                                cartActions.incrementItemByOne({
+                                  index: cartItem.index,
+                                })
+                              )
+                            }
+                          >
+                            +
+                          </Button>
+                        </HStack>
+                        <Box fontWeight={"500"}>
+                          $
+                          {
+                            +(
+                              Math.round(
+                                cartItem.item.productDetails.price *
+                                  cartItem.quantity +
+                                  "e+2"
+                              ) + "e-2"
+                            )
+                          }
+                        </Box>
                       </HStack>
                     </VStack>
-                  </HStack>
-                  <HStack>
-                    <Button
-                      onClick={() =>
-                        dispatch(
-                          cartActions.decrementItemByOne({
-                            index: cartItem.index,
-                          })
-                        )
-                      }
-                    >
-                      -
-                    </Button>
-                    <Button
-                      onClick={() =>
-                        dispatch(
-                          cartActions.incrementItemByOne({
-                            index: cartItem.index,
-                          })
-                        )
-                      }
-                    >
-                      +
-                    </Button>
                   </HStack>
                 </Fragment>
               ))}
@@ -107,11 +136,13 @@ function ShoppingCartModal(props) {
             <VStack w={"full"}>
               <Flex justifyContent={"space-between"} w={"full"}>
                 <Box fontWeight={"bold"}>Total Amount:</Box>
-                <Box fontWeight={"bold"}>${totalAmount.toFixed(2)}</Box>
+                <Box fontWeight={"bold"}>${subtotal.toFixed(2)}</Box>
               </Flex>
               <HStack w={"full"} justifyContent={"flex-end"}>
                 <Button onClick={props.onClose}>Close</Button>
-                <Button>Checkout</Button>
+                <Button as={Router} to={"/checkout"} onClick={props.onClose}>
+                  Checkout
+                </Button>
               </HStack>
             </VStack>
           </ModalFooter>
@@ -122,11 +153,3 @@ function ShoppingCartModal(props) {
 }
 
 export default ShoppingCartModal;
-
-//  onClick={() =>
-//                         dispatch(
-//                           cartActions.decrementItemByOne({
-//                             index: cartItem.index,
-//                           })
-//                         )
-//                       }

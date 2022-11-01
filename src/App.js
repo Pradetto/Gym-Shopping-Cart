@@ -8,6 +8,8 @@ import SignUpPage from "./pages/SignUpPage";
 import ContactPage from "./pages/ContactPage";
 import LoginPage from "./pages/LoginPage";
 import ShoppingCartModal from "./components/cart/ShoppingCartModal";
+import CheckoutPage from "./pages/CheckoutPage";
+import FavoritesPage from "./pages/FavoritesPage";
 // import Footer from "./components/footer/Footer";
 
 // Router
@@ -22,15 +24,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Grid, GridItem, useDisclosure } from "@chakra-ui/react";
 
 function App() {
-  const [cartDisplay, setCartDisplay] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // const cartDisplayHandler = () => {
-  //   setCartDisplay(true);
-  // };
-  // const cartNotDisplayHandler = () => {
-  //   setCartDisplay(false);
-  // };
   return (
     <Fragment>
       <Grid templateRows="80px 1fr">
@@ -49,6 +44,8 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
           </Routes>
         </GridItem>
       </Grid>

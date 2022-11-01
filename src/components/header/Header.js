@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link as ReachLink } from "react-router-dom";
+
+//Redux
+import { useSelector } from "react-redux";
 
 // Components
 import MobileContent from "./MobileContent";
@@ -8,13 +11,18 @@ import MobileHamburger from "./MobileHamburger";
 
 // CSS
 import { Flex, Link, Heading, Box } from "@chakra-ui/react";
-
 import { IoBarbell } from "react-icons/io5";
 
 export const Header = (props) => {
   const [display, setChangeDisplay] = useState("none");
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Need to update
   const [hasFavorites, setHasFavorites] = useState(false);
+  const cartQuantity = useSelector((state) =>
+    state.cart.items.length > 0
+      ? state.cart.items.reduce((total, obj) => total + obj.quantity, 0)
+      : 0
+  );
+  // const [cartQuantity, setCartQuantity] = useState(0);
 
   const loginHandler = () => {
     setIsLoggedIn(true);
@@ -35,6 +43,17 @@ export const Header = (props) => {
     setChangeDisplay("none");
   };
 
+  // useEffect(() => {
+  //   setCartQuantity(
+  //     items.length > 0 ? items.reduce((total, obj) => total + obj.quantity) : 0
+  //   );
+  // }, [items]);
+  // if (items.length > 0) {
+  //   const quantity = items.reduce((total, obj) => total + obj.quantity, 0);
+  //   setCartQuantity(quantity);
+  // }
+  // let cartQuantity
+  //   items.length > 0 ? items.reduce((total, obj) => total + obj.quantity) : 0;
   return (
     <Flex
       align="center"
@@ -65,6 +84,7 @@ export const Header = (props) => {
           cartDisplay={props.cartDisplay}
           cartDisplayHandler={props.cartDisplayHandler}
           cartNotDisplayHandler={props.cartNotDisplayHandler}
+          cartQuantity={cartQuantity}
         />
         <MobileContent changeDisplay={setFlexDisplayHandler} />
       </Flex>
@@ -81,6 +101,7 @@ export const Header = (props) => {
         cartDisplay={props.cartDisplay}
         cartDisplayHandler={props.cartDisplayHandler}
         cartNotDisplayHandler={props.cartNotDisplayHandler}
+        cartQuantity={cartQuantity}
       />
     </Flex>
   );

@@ -50,15 +50,17 @@ const cartSlice = createSlice({
       state.totalAmount -=
         state.items[action.payload.index].item.productDetails.price;
 
-      // NEED TO FIX THIS LINE BELOW
       if (state.items[action.payload.index].quantity <= 0) {
-        const removedArray = state.items.splice(action.payload.index, 1);
-        // console.log(removedArray);
-        const updatedArray = removedArray.map((obj, index) => {
+        const newArray = state.items.filter((obj, index) => {
+          return obj.index !== action.payload.index;
+        });
+        const updatedArray = newArray.map((obj, index) => {
           return { ...obj, index: index };
         });
-        console.log(updatedArray);
         state.items = updatedArray;
+      }
+
+      if (state.totalAmount < 0.0000001) {
         state.totalAmount = 0;
       }
     },
@@ -69,11 +71,3 @@ export const items = (state) => state.items;
 export const cartActions = cartSlice.actions;
 
 export default cartSlice;
-
-// {
-//   id: 0.08898430390967837,
-//   size: 12,
-//   color: "blue",
-//   item: "hello",
-//   quantity: 1,
-// },

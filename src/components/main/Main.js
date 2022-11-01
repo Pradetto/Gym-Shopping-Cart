@@ -37,7 +37,7 @@ const Main = () => {
             <Image
               src="https://t3.ftcdn.net/jpg/02/42/39/66/360_F_242396695_5npYdlTm60j48pFPAVFJBC5uj9Lnvl6q.jpg"
               minW="100%"
-              minH="101%"
+              minH="103%"
               position="absolute"
               top="0"
               left="0"

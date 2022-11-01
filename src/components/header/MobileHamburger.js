@@ -68,7 +68,7 @@ function MobileHamburger(props) {
         {props.isLoggedIn ? (
           <Fragment>
             <HamburgerButton
-              to="/logout"
+              to="/"
               text="Logout"
               action={props.logoutHandler}
               setNoneDisplayHandler={props.setNoneDisplayHandler}
@@ -104,11 +104,11 @@ function MobileHamburger(props) {
           />
         )}
         <HamburgerButton
-          to="/cart"
           setNoneDisplayHandler={props.setNoneDisplayHandler}
+          action={props.cartDisplayHandler}
         >
           <HStack>
-            <Text>0</Text>
+            <Text>{props.cartQuantity}</Text>
             <Box as={GiShoppingCart} size={35} />
           </HStack>
         </HamburgerButton>

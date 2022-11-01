@@ -29,7 +29,7 @@ function DesktopContent(props) {
           {props.isLoggedIn ? (
             <Fragment>
               <DesktopButton
-                to="/logout"
+                to="/"
                 text="Logout"
                 action={props.logoutHandler}
               />
@@ -60,7 +60,7 @@ function DesktopContent(props) {
             />
           )}
           <DesktopButton action={props.cartDisplayHandler}>
-            <Text>0</Text>
+            <Text>{props.cartQuantity}</Text>
             <Box as={GiShoppingCart} size={35} />
           </DesktopButton>
         </HStack>
