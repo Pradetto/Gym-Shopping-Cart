@@ -16,23 +16,18 @@ import { IoBarbell } from "react-icons/io5";
 export const Header = (props) => {
   const [display, setChangeDisplay] = useState("none");
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Need to update
-  const [hasFavorites, setHasFavorites] = useState(false);
   const cartQuantity = useSelector((state) =>
     state.cart.items.length > 0
       ? state.cart.items.reduce((total, obj) => total + obj.quantity, 0)
       : 0
   );
-  // const [cartQuantity, setCartQuantity] = useState(0);
+  const hasFavorites = useSelector((state) => state.favorites.length);
 
   const loginHandler = () => {
     setIsLoggedIn(true);
   };
   const logoutHandler = () => {
     setIsLoggedIn(false);
-  };
-
-  const isFavoritesHandler = () => {
-    setHasFavorites(!hasFavorites);
   };
 
   const setFlexDisplayHandler = () => {
@@ -43,17 +38,6 @@ export const Header = (props) => {
     setChangeDisplay("none");
   };
 
-  // useEffect(() => {
-  //   setCartQuantity(
-  //     items.length > 0 ? items.reduce((total, obj) => total + obj.quantity) : 0
-  //   );
-  // }, [items]);
-  // if (items.length > 0) {
-  //   const quantity = items.reduce((total, obj) => total + obj.quantity, 0);
-  //   setCartQuantity(quantity);
-  // }
-  // let cartQuantity
-  //   items.length > 0 ? items.reduce((total, obj) => total + obj.quantity) : 0;
   return (
     <Flex
       align="center"
@@ -80,7 +64,6 @@ export const Header = (props) => {
           logoutHandler={logoutHandler}
           isLoggedIn={isLoggedIn}
           hasFavorites={hasFavorites}
-          isFavoritesHandler={isFavoritesHandler}
           cartDisplay={props.cartDisplay}
           cartDisplayHandler={props.cartDisplayHandler}
           cartNotDisplayHandler={props.cartNotDisplayHandler}
@@ -97,7 +80,6 @@ export const Header = (props) => {
         logoutHandler={logoutHandler}
         isLoggedIn={isLoggedIn}
         hasFavorites={hasFavorites}
-        isFavoritesHandler={isFavoritesHandler}
         cartDisplay={props.cartDisplay}
         cartDisplayHandler={props.cartDisplayHandler}
         cartNotDisplayHandler={props.cartNotDisplayHandler}

@@ -20,8 +20,6 @@ import {
   ModalCloseButton,
   Modal,
   Flex,
-  Center,
-  Image,
 } from "@chakra-ui/react";
 
 //Global variable
@@ -152,4 +150,4 @@ function ShoppingCartModal(props) {
   );
 }
 
-export default ShoppingCartModal;
+export default React.memo(ShoppingCartModal);

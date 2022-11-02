@@ -33,36 +33,24 @@ const Main = () => {
     <Fragment>
       <Center>
         <Flex justifyContent="center" alignItems="center" minH="90vh">
-          {stopVideo ? (
-            <Image
-              src="https://t3.ftcdn.net/jpg/02/42/39/66/360_F_242396695_5npYdlTm60j48pFPAVFJBC5uj9Lnvl6q.jpg"
-              minW="100%"
-              minH="103%"
-              position="absolute"
-              top="0"
-              left="0"
-              zIndex="-1"
-              backgroundSize="cover"
-            />
-          ) : (
-            <Box
-              minW="100%"
-              minH="103%"
-              as="video"
-              src={VideoBackground}
-              muted={toggleMute ? "True" : ""}
-              loop
-              autoPlay
-              objectFit="cover"
-              sx={{
-                aspectRatio: "16/9",
-              }}
-              position="absolute"
-              top="0"
-              left="0"
-              zIndex="-1"
-            />
-          )}
+          <Box
+            minW="100%"
+            minH="103%"
+            as="video"
+            src={VideoBackground}
+            muted={toggleMute ? "True" : ""}
+            loop
+            autoPlay
+            objectFit="cover"
+            sx={{
+              aspectRatio: "16/9",
+            }}
+            position="absolute"
+            top="0"
+            left="0"
+            zIndex="-1"
+            playsInline
+          />
           <VStack>
             <Heading
               textAlign="center"
@@ -103,3 +91,18 @@ const Main = () => {
 };
 
 export default Main;
+
+// {stopVideo ? (
+//   <Image
+//     src="https://t3.ftcdn.net/jpg/02/42/39/66/360_F_242396695_5npYdlTm60j48pFPAVFJBC5uj9Lnvl6q.jpg"
+//     minW="100%"
+//     minH="103%"
+//     position="absolute"
+//     top="0"
+//     left="0"
+//     zIndex="-1"
+//     backgroundSize="cover"
+//   />
+// ) :
+
+// }

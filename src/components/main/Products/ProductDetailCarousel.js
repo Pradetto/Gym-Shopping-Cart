@@ -10,13 +10,13 @@ const settings = {
   dots: true,
   arrows: false,
   fade: true,
-  infinite: true,
-  autoplay: true,
-  speed: 500,
-  autoplaySpeed: 5000,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
+// infinite: true,
+// autoplay: true,
+// speed: 500,
+// autoplaySpeed: 5000,
 
 function Carousel(props) {
   // As we have used custom buttons, we need a reference variable to
@@ -38,8 +38,8 @@ function Carousel(props) {
   return (
     <Box
       position={"relative"}
-      height={"620px"}
-      width={"full"}
+      height={"600px"}
+      width={["full", "full", "90%"]}
       overflow={"hidden"}
     >
       {/* CSS files for react-slick */}

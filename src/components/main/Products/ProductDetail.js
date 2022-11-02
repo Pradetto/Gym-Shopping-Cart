@@ -3,24 +3,21 @@ import React, { Fragment, useEffect, useState } from "react";
 // Components
 import Carousel from "./ProductDetailCarousel";
 import ProductDetailsForm from "../ProductDetailForm/ProductDetailsForm";
+import ProductDetailModal from "./ProductDetailModal";
 
 //Redux & Router
 import { getAllProducts } from "../../../store/products-slice";
 import { useParams } from "react-router-dom";
 
 // CSS
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Center, Text } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 
 function ProductDetail() {
-  const [item, setItem] = useState({
-    category: "A",
-    subcategory: "A",
-    productDetails: {
-      productName: "A",
-    },
-  });
+  const [item, setItem] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const productsData = useSelector(getAllProducts);
+
   const params = useParams();
 
   useEffect(() => {
@@ -29,9 +26,26 @@ function ProductDetail() {
     });
     setItem(product[0]);
   }, [params, productsData]);
-  if (item.product) {
-    console.log("Successfully filtered", item.productDetails.productName);
+
+  // ERROR HANDLER if starting undefined double rendering here
+  if (!item) {
+    return;
+    // (
+    //   <Center>
+    //     <Text color={"red"}>
+    //       {" "}
+    //       Hmmm loading is taking a little longer than expected. Please wait a
+    //       little longer and if nothing loads please return to products page and
+    //       try again.
+    //     </Text>
+    //   </Center>
+    // );
   }
+
+  // const showModalhandler = () => {
+  //   setShowModal(!showModal);
+  // };
+
   return (
     <Fragment>
       {/* // Desktop */}
@@ -47,6 +61,7 @@ function ProductDetail() {
         <GridItem maxW={"50vw"} p={5}>
           <ProductDetailsForm item={item} />
         </GridItem>
+        {/* <ProductDetailModal /> */}
       </Grid>
 
       {/* // Mobile */}

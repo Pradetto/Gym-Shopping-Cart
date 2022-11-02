@@ -103,7 +103,6 @@ function ProductContainerCard(props) {
                     color={"gray.800"}
                     fontSize={"1.2em"}
                   >
-                    {/* Will have to update HEEEEEEERRRRREEEEEEEEEEEEEEEEE */}
                     <Link
                       display={"flex"}
                       onClick={() =>

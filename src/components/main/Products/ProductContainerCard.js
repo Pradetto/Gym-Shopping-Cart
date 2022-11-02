@@ -18,7 +18,6 @@ import {
   Image,
   Badge,
   Icon,
-  chakra,
   Link,
   Tooltip,
 } from "@chakra-ui/react";
@@ -32,6 +31,7 @@ function ProductContainerCard(props) {
   const [filteredData, setFilteredData] = useState([]);
   const [sortFilter, setSortFilter] = useState({});
   const dispatch = useDispatch();
+  const favoritesData = useSelector((state) => state.favorites);
 
   useEffect(() => {
     const data = products.filter((item) => {
@@ -161,27 +161,58 @@ function ProductContainerCard(props) {
                   >
                     {item.productDetails.productName}
                   </Box>
-                  <Tooltip
-                    label="Add to favorites"
-                    bg="white"
-                    placement={"top"}
-                    color={"gray.800"}
-                    fontSize={"1.2em"}
-                  >
-                    <Link
-                      display={"flex"}
-                      onClick={() =>
-                        dispatch(favoritesActions.addtoFavorites(item))
-                      }
+
+                  {favoritesData.some((favItem) => {
+                    return (
+                      favItem.productDetails.productId ===
+                      item.productDetails.productId
+                    );
+                  }) ? (
+                    <Tooltip
+                      label="Remove from favorites"
+                      bg="white"
+                      placement={"top"}
+                      color={"gray.800"}
+                      fontSize={"1.2em"}
                     >
-                      <Icon
-                        as={AiOutlineHeart}
-                        h={8}
-                        w={8}
-                        alignSelf={"center"}
-                      />
-                    </Link>
-                  </Tooltip>
+                      <Link
+                        display={"flex"}
+                        onClick={() =>
+                          dispatch(favoritesActions.removefromFavorites(item))
+                        }
+                      >
+                        <Icon
+                          as={AiFillHeart}
+                          color="#e31b23"
+                          h={8}
+                          w={8}
+                          alignSelf={"center"}
+                        />
+                      </Link>
+                    </Tooltip>
+                  ) : (
+                    <Tooltip
+                      label="Add to favorites"
+                      bg="white"
+                      placement={"top"}
+                      color={"gray.800"}
+                      fontSize={"1.2em"}
+                    >
+                      <Link
+                        display={"flex"}
+                        onClick={() =>
+                          dispatch(favoritesActions.addtoFavorites(item))
+                        }
+                      >
+                        <Icon
+                          as={AiOutlineHeart}
+                          h={8}
+                          w={8}
+                          alignSelf={"center"}
+                        />
+                      </Link>
+                    </Tooltip>
+                  )}
                 </Flex>
 
                 <Flex justifyContent="space-between" alignContent="center">
@@ -208,4 +239,4 @@ function ProductContainerCard(props) {
   );
 }
 
-export default ProductContainerCard;
+export default React.memo(ProductContainerCard);

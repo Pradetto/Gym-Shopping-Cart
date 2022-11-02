@@ -14,9 +14,6 @@ import {
   Text,
   Divider,
   Stack,
-  Button,
-  useColorMode,
-  useColorModeValue,
   Box,
   Link,
 } from "@chakra-ui/react";
@@ -26,9 +23,8 @@ const SHIPPINGPERCENTAGE = 0.1;
 const TAXES = 0.09;
 
 const CheckoutCart = () => {
-  const { toggleColorMode } = useColorMode();
-  const bgColor = useColorModeValue("gray.50", "whiteAlpha.50");
-  const secondaryTextColor = useColorModeValue("gray.600", "gray.400");
+  const bgColor = "gray.50";
+  const secondaryTextColor = "gray.600";
   const items = useSelector((state) => state.cart.items);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
@@ -60,7 +56,14 @@ const CheckoutCart = () => {
         </Box>
       )}
       {items.map((cartItem) => (
-        <HStack spacing={6} alignItems="center" w="full">
+        <HStack
+          spacing={6}
+          alignItems="center"
+          w="full"
+          key={`${cartItem.item.productDetails.productName}-${
+            cartItem.item.productDetails.productid
+          }-${cartItem.size}-${cartItem.color.toUpperCase()}`}
+        >
           <AspectRatio ratio={1} w={24}>
             <Image
               src={cartItem.item.productDetails.imageOne}

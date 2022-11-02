@@ -52,12 +52,6 @@ function MobileHamburger(props) {
         />
 
         <Divider backgroundColor={"gray.500"} />
-
-        {/* {isLoggedIn ? (
-          <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
-        ) : (
-          <DesktopButton text="Sign Up" to="/signup" />
-        )} */}
         {!props.isLoggedIn && (
           <HamburgerButton
             text="Sign Up"
@@ -78,20 +72,10 @@ function MobileHamburger(props) {
               setNoneDisplayHandler={props.setNoneDisplayHandler}
             >
               {!props.hasFavorites && (
-                <Box
-                  as={AiOutlineHeart}
-                  size={25}
-                  color="#e31b23"
-                  onClick={props.isFavoritesHandler}
-                />
+                <Box as={AiOutlineHeart} size={25} color="#e31b23" />
               )}
               {props.hasFavorites && (
-                <Box
-                  as={AiFillHeart}
-                  size={25}
-                  color="#e31b23"
-                  onClick={props.isFavoritesHandler}
-                />
+                <Box as={AiFillHeart} size={25} color="#e31b23" />
               )}
             </HamburgerButton>
           </Fragment>

@@ -30,8 +30,8 @@ function ProductColors(props) {
             <WrapItem
               border={"1px solid #EEEEEE"}
               p={1}
-              minW={75}
-              minH={75}
+              minW={65}
+              minH={65}
               cursor="pointer"
               key={c}
               _hover={{

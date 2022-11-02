@@ -20,11 +20,6 @@ function DesktopContent(props) {
         <Divider orientation="vertical" borderColor={"gray.500"} mx={3} />
 
         <HStack>
-          {/* {isLoggedIn ? (
-          <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
-        ) : (
-          <DesktopButton text="Sign Up" to="/signup" />
-        )} */}
           {!props.isLoggedIn && <DesktopButton text="Sign Up" to="/signup" />}
           {props.isLoggedIn ? (
             <Fragment>
@@ -35,20 +30,10 @@ function DesktopContent(props) {
               />
               <DesktopButton to="/favorites">
                 {!props.hasFavorites && (
-                  <Box
-                    as={AiOutlineHeart}
-                    size={25}
-                    color="#e31b23"
-                    onClick={props.isFavoritesHandler}
-                  />
+                  <Box as={AiOutlineHeart} size={25} color="#e31b23" />
                 )}
                 {props.hasFavorites && (
-                  <Box
-                    as={AiFillHeart}
-                    size={25}
-                    color="#e31b23"
-                    onClick={props.isFavoritesHandler}
-                  />
+                  <Box as={AiFillHeart} size={25} color="#e31b23" />
                 )}
               </DesktopButton>
             </Fragment>
@@ -60,8 +45,8 @@ function DesktopContent(props) {
             />
           )}
           <DesktopButton action={props.cartDisplayHandler}>
-            <Text>{props.cartQuantity}</Text>
             <Box as={GiShoppingCart} size={35} />
+            <Text>{props.cartQuantity}</Text>
           </DesktopButton>
         </HStack>
       </Flex>

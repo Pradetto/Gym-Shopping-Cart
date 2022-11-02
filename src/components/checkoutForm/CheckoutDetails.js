@@ -1,3 +1,5 @@
+import React from "react";
+
 // React Router
 import { Link as RouterLink } from "react-router-dom";
 
@@ -80,4 +82,4 @@ const CheckoutDetails = () => {
   );
 };
 
-export default CheckoutDetails;
+export default React.memo(CheckoutDetails);

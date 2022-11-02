@@ -31,28 +31,27 @@ function ProductDescription(props) {
               lightweight, breathable, perforated polyester ripstop material.
               This unisex {`${props.item.category}`} item is designed to take on
               as much work as you do.
-              <UnorderedList>
-                <ListItem>
-                  The upper of the Ripstop Runner and built-in lateral and
-                  medial support provide a secure fit for movement in every
-                  direction.
-                </ListItem>
-                <ListItem>
-                  The material was designed for multi-environment usage,
-                  allowing for an easy transition between inside and outside
-                  with the right blend of flexibility and support.
-                </ListItem>
-                <ListItem> Breathable perforated material.</ListItem>
-                <ListItem>
-                  Internal collar padding provides all-day comfort.
-                </ListItem>
-                <ListItem>
-                  Lightweight midsole constructed of high rebound Phylon,
-                  providing durability.
-                </ListItem>
-                <ListItem>Weight: 10.3 oz.</ListItem>
-              </UnorderedList>
             </Text>
+            <UnorderedList>
+              <ListItem>
+                The upper of the Ripstop Runner and built-in lateral and medial
+                support provide a secure fit for movement in every direction.
+              </ListItem>
+              <ListItem>
+                The material was designed for multi-environment usage, allowing
+                for an easy transition between inside and outside with the right
+                blend of flexibility and support.
+              </ListItem>
+              <ListItem> Breathable perforated material.</ListItem>
+              <ListItem>
+                Internal collar padding provides all-day comfort.
+              </ListItem>
+              <ListItem>
+                Lightweight midsole constructed of high rebound Phylon,
+                providing durability.
+              </ListItem>
+              <ListItem>Weight: 10.3 oz.</ListItem>
+            </UnorderedList>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
