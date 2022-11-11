@@ -1,28 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [];
-// {
-//   categories: [],
-//   subcategories: [],
-//   products: [
-//     {
-//       category: "",
-//       id: 1,
-//       productDetails: {
-//         colors: [],
-//         dateCreated: "",
-//         imageOne: "",
-//         imageThree: "",
-//         imageTwo: "",
-//         newAdd: false,
-//         price: 1,
-//         productId: 0.08898430390967837,
-//         productName: "",
-//       },
-//       subcategory: "",
-//     },
-//   ],
-// };
 
 const favoritesSlice = createSlice({
   name: "favorites",

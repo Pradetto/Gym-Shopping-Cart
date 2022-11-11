@@ -86,8 +86,6 @@ function App() {
       {isOpen && (
         <ShoppingCartModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       )}
-      {/* Make a dynamic footer one for the home page then one for the rest and I can put a link to the credits from there */}
-      {/* <Footer /> */}
     </Fragment>
   );
 }

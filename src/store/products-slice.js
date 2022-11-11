@@ -15,6 +15,7 @@ export const fetchProducts = createAsyncThunk("api/all-products/", async () => {
   }
 });
 
+// CLEAN THIS UP BELOW ADD A CHECK TO SEE IF OBJECT EXISTS SO I DO NOT HAVE TO USE A DUMMY STATE
 const initialState = {
   categories: [],
   subcategories: [],
