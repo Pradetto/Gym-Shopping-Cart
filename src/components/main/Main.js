@@ -6,7 +6,6 @@ import VideoButton from "../UI/VideoButton";
 
 // CSS
 import { GiSpeakerOff, GiSpeaker } from "react-icons/gi";
-import { BiVideo, BiVideoOff } from "react-icons/bi";
 
 // assets
 import VideoBackground from "../../assets/video/Crossfit-Cinematic.mp4";
@@ -23,10 +22,8 @@ import {
 
 const Main = () => {
   const [toggleMute, setToggleMute] = useState(true);
-  const [stopVideo, setStopVideo] = useState(false);
 
   let muteIconSrc = toggleMute ? GiSpeakerOff : GiSpeaker;
-  let videoIconSrc = stopVideo ? BiVideoOff : BiVideo;
 
   return (
     <Fragment>
@@ -75,10 +72,6 @@ const Main = () => {
                 <VideoButton
                   action={() => setToggleMute(!toggleMute)}
                   src={muteIconSrc}
-                />
-                <VideoButton
-                  action={() => setStopVideo(!stopVideo)}
-                  src={videoIconSrc}
                 />
               </Container>
             </Flex>
