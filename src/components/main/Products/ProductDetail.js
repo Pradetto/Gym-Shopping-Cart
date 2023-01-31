@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 
 // Components
-import Carousel from "./ProductDetailCarousel";
+import ProductDetailCarousel from "./ProductDetailCarousel";
 import ProductDetailsForm from "../ProductDetailForm/ProductDetailsForm";
 
 //Redux & Router
@@ -14,9 +14,7 @@ import { useSelector } from "react-redux";
 
 function ProductDetail() {
   const [item, setItem] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
   const productsData = useSelector(getAllProducts);
-
   const params = useParams();
 
   useEffect(() => {
@@ -27,23 +25,17 @@ function ProductDetail() {
   }, [params, productsData]);
 
   // ERROR HANDLER if starting undefined double rendering here
-  // if (!item) {
-  //   return;
-  // (
-  //   <Center>
-  //     <Text color={"red"}>
-  //       {" "}
-  //       Hmmm loading is taking a little longer than expected. Please wait a
-  //       little longer and if nothing loads please return to products page and
-  //       try again.
-  //     </Text>
-  //   </Center>
-  // );
-  // }
-
-  // const showModalhandler = () => {
-  //   setShowModal(!showModal);
-  // };
+  if (!item) {
+    return;
+    // <Center>
+    //   <Text color={"red"}>
+    //     {" "}
+    //     Hmmm loading is taking a little longer than expected. Please wait a
+    //     little longer and if nothing loads please return to products page and
+    //     try again.
+    //   </Text>
+    // </Center>;
+  }
 
   return (
     <Fragment>
@@ -53,14 +45,14 @@ function ProductDetail() {
         gridTemplateRows={"1fr"}
         minH={"80vh"}
         display={["none", "none", "grid"]}
+        gridAutoFlow={"row"}
       >
-        <GridItem maxW={"50vw"} p={5} my={5}>
-          <Carousel item={item} />
+        <GridItem maxW={"50vw"} p={5} my={5} marginLeft={"15%"}>
+          <ProductDetailCarousel item={item} />
         </GridItem>
-        <GridItem maxW={"50vw"} p={5}>
+        <GridItem maxW={"50vw"} p={5} mx={15}>
           <ProductDetailsForm item={item} />
         </GridItem>
-        {/* <ProductDetailModal /> */}
       </Grid>
 
       {/* // Mobile */}
@@ -70,7 +62,7 @@ function ProductDetail() {
         display={["block", "block", "none"]}
       >
         <GridItem maxW={"100vw"}>
-          <Carousel item={item} />
+          <ProductDetailCarousel item={item} />
         </GridItem>
         <GridItem maxW={"100vw"} justifyContent={"Center"}>
           <ProductDetailsForm item={item} />

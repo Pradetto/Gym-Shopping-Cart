@@ -1,5 +1,6 @@
-const allProductsUrl = "http://localhost:8000/api/all-products/";
-const allCategoriesUrl = "http://localhost:8000/api/all-categories/";
+const HOST_WEBSITE_URL = "https://fitness-plus-app.herokuapp.com";
+const allProductsUrl = `${HOST_WEBSITE_URL}/api/all-products/`;
+const allCategoriesUrl = `${HOST_WEBSITE_URL}/api/all-categories/`;
 
 export const fetchData = () => {
   const getProducts = async () => {

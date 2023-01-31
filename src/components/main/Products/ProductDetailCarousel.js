@@ -18,7 +18,7 @@ const settings = {
 // speed: 500,
 // autoplaySpeed: 5000,
 
-function Carousel(props) {
+function ProductDetailCarousel(props) {
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = useState(null);
@@ -35,11 +35,13 @@ function Carousel(props) {
     props.item.productDetails.imageThree,
   ];
 
+  console.log(props.item);
+
   return (
     <Box
       position={"relative"}
       height={"600px"}
-      width={["full", "full", "90%"]}
+      width={["full", "full", "70%"]}
       overflow={"hidden"}
     >
       {/* CSS files for react-slick */}
@@ -109,4 +111,4 @@ function Carousel(props) {
   );
 }
 
-export default Carousel;
+export default ProductDetailCarousel;
