@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const HOST_WEBSITE_URL = "https://fitness-plus-app.herokuapp.com/";
+const HOST_WEBSITE_URL = "https://fitness-plus-app.herokuapp.com";
 const PRODUCTS_URL = `${HOST_WEBSITE_URL}/api/all-products/`;
 const CATEGORIES_URL = `${HOST_WEBSITE_URL}/api/all-categories/`;
 
