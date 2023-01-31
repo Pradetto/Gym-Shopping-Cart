@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import { Link as RouterLink } from "react-router-dom";
 
 // CSS
-import { Box, Center, Link, VStack } from "@chakra-ui/react";
+import { Box, Center, VStack } from "@chakra-ui/react";
 function FavoritesPage() {
   const len = useSelector((state) => state.favorites.length);
   return (
