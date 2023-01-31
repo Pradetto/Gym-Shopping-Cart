@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const PRODUCTS_URL = "http://localhost:8000/api/all-products/";
-const CATEGORIES_URL = "http://localhost:8000/api/all-categories/";
+const HOST_WEBSITE_URL = "https://fitness-plus-app.herokuapp.com/";
+const PRODUCTS_URL = `${HOST_WEBSITE_URL}/api/all-products/`;
+const CATEGORIES_URL = `${HOST_WEBSITE_URL}/api/all-categories/`;
 
 export const fetchProducts = createAsyncThunk("api/all-products/", async () => {
   try {
