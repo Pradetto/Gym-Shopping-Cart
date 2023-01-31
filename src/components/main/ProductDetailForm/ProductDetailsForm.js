@@ -13,7 +13,6 @@ import ProductFormButtons from "./ProductFormButtons";
 // CSS
 import { Box } from "@chakra-ui/react";
 import ProductColors from "./ProductColors";
-import ProductDescription from "./ProductDescription";
 
 function ProductDetailsForm(props) {
   const dispatch = useDispatch();

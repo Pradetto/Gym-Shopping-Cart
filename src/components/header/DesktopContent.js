@@ -6,7 +6,6 @@ import DesktopButton from "./DesktopButton";
 import { Flex, HStack, Divider, Box, Text } from "@chakra-ui/react";
 import { GiShoppingCart } from "react-icons/gi";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import ShoppingCartModal from "../cart/ShoppingCartModal";
 
 function DesktopContent(props) {
   return (

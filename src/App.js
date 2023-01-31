@@ -1,26 +1,13 @@
-import React, { Fragment, Suspense, useState } from "react";
+import React, { Fragment, Suspense } from "react";
 
 // Components
-// import HomePage from "./pages/HomePage";
 import Header from "./components/header/Header";
-// import ProductsPage from "./pages/ProductsPage";
-// import SignUpPage from "./pages/SignUpPage";
-// import ContactPage from "./pages/ContactPage";
-// import LoginPage from "./pages/LoginPage";
 import ShoppingCartModal from "./components/cart/ShoppingCartModal";
-// import CheckoutPage from "./pages/CheckoutPage";
-// import FavoritesPage from "./pages/FavoritesPage";
-// import Footer from "./components/footer/Footer";
 
 // Router
 import { Routes, Route, Navigate } from "react-router-dom";
 
-// Components
-// import Header from "./components/header/Header";
-// import Main from "./components/main/Main";
-
 // CSS
-// import { Flex } from "@chakra-ui/react";
 import {
   Grid,
   GridItem,

@@ -4,7 +4,7 @@ import React from "react";
 import ProductDescription from "./ProductDescription";
 
 // CSS
-import { Box, Text, Link, VStack, Flex, HStack } from "@chakra-ui/react";
+import { Box, Text, Link, Flex } from "@chakra-ui/react";
 
 const classes = {
   fontSize: "2xl",

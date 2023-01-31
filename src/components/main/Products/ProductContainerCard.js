@@ -21,8 +21,7 @@ import {
   Link,
   Tooltip,
 } from "@chakra-ui/react";
-// import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
-import { FiShoppingCart } from "react-icons/fi";
+
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 function ProductContainerCard(props) {
