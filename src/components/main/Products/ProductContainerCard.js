@@ -113,18 +113,20 @@ function ProductContainerCard(props) {
                   bg="red.200"
                 />
               )}
-
-              <Image
-                src={item.productDetails.imageOne}
-                alt={`Picture of ${item.productDetails.productName}`}
-                roundedTop="lg"
-                // ALL THESE ARE NEW BELOW
-                minWidth={"18.9rem"}
-                maxWidth={"18.9rem"}
-                minH={"22rem"}
-                maxH={"22rem"}
-              />
-
+              <Link
+                as={RouteLink}
+                to={`/products/${item.category}/${item.subcategory}/${item.productDetails.productName}/details`}
+              >
+                <Image
+                  src={item.productDetails.imageOne}
+                  alt={`Picture of ${item.productDetails.productName}`}
+                  roundedTop="lg"
+                  minWidth={"18.9rem"}
+                  maxWidth={"18.9rem"}
+                  minH={"22rem"}
+                  maxH={"22rem"}
+                />
+              </Link>
               <Box p="6">
                 <Box d="flex" alignItems="baseline">
                   {item.productDetails.newAdd && (

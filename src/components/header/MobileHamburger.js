@@ -71,11 +71,14 @@ function MobileHamburger(props) {
               to="/favorites"
               setNoneDisplayHandler={props.setNoneDisplayHandler}
             >
-              {!props.hasFavorites && (
-                <Box as={AiOutlineHeart} size={25} color="#e31b23" />
-              )}
-              {props.hasFavorites && (
-                <Box as={AiFillHeart} size={25} color="#e31b23" />
+              {props.hasFavorites ? (
+                <HStack justifyContent={"center"}>
+                  <Box as={AiFillHeart} size={25} color="#e31b23" />
+                </HStack>
+              ) : (
+                <HStack alignItems={"center"} justifyContent={"center"}>
+                  <Box as={AiOutlineHeart} size={25} color="#e31b23" />
+                </HStack>
               )}
             </HamburgerButton>
           </Fragment>
@@ -91,7 +94,7 @@ function MobileHamburger(props) {
           setNoneDisplayHandler={props.setNoneDisplayHandler}
           action={props.cartDisplayHandler}
         >
-          <HStack>
+          <HStack justifyContent={"center"}>
             <Text>{props.cartQuantity}</Text>
             <Box as={GiShoppingCart} size={35} />
           </HStack>

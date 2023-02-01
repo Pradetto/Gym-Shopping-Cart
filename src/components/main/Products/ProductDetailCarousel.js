@@ -35,8 +35,6 @@ function ProductDetailCarousel(props) {
     props.item.productDetails.imageThree,
   ];
 
-  console.log(props.item);
-
   return (
     <Box
       position={"relative"}

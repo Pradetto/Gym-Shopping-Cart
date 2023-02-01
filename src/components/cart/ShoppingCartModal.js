@@ -20,6 +20,7 @@ import {
   ModalCloseButton,
   Modal,
   Flex,
+  Link,
 } from "@chakra-ui/react";
 
 //Global variable
@@ -64,14 +65,19 @@ function ShoppingCartModal(props) {
                   }
                 >
                   <HStack justifyContent={"flex-start"} minH={imageSize}>
-                    <Box
-                      maxW={imageSize}
-                      maxH={imageSize}
-                      minH={imageSize}
-                      minW={imageSize}
-                      as={"img"}
-                      src={cartItem.item.productDetails.imageOne}
-                    ></Box>
+                    <Link
+                      as={Router}
+                      to={`/products/${cartItem.item.category}/${cartItem.item.subcategory}/${cartItem.item.productDetails.productName}/details`}
+                    >
+                      <Box
+                        maxW={imageSize}
+                        maxH={imageSize}
+                        minH={imageSize}
+                        minW={imageSize}
+                        as={"img"}
+                        src={cartItem.item.productDetails.imageOne}
+                      />
+                    </Link>
                     <VStack alignItems={"flex-start"} minH={imageSize}>
                       <Box fontWeight={"500"}>
                         {cartItem.item.productDetails.productName}

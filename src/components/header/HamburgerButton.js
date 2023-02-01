@@ -24,7 +24,7 @@ function HamburgerButton(props) {
           as={ReachLink}
           to={props.to}
           w="full"
-          style={{ width: "100%", textAlign: "center" }}
+          style={{ width: "21rem", textAlign: "center" }}
         >
           {props.text}
           {props.children}

@@ -3,11 +3,10 @@ import { NavLink as RouterLink } from "react-router-dom";
 
 // Components
 import SidebarMobileCategoryHeading from "./SidebarMobileCategoryHeading";
-// import SidebarMobileSubcategoryHeading from "./Sidebar/SidebarMobileSubcategoryHeading";
+// import SidebarMobileSubcategoryHeading from "./SidebarMobileSubcategoryHeading";
 
 //Redux
 import { useSelector } from "react-redux";
-// import { useParams } from "react-router-dom";
 
 // CSS
 import {

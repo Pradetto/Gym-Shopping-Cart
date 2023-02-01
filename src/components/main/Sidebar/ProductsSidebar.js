@@ -8,8 +8,6 @@ import ProductSidebarMobile from "./ProductSidebarMobile";
 import { Flex } from "@chakra-ui/react";
 
 function ProductsSidebar() {
-  // How to get the currently selected? Maybe the URL???
-
   return (
     <Fragment>
       {/* Desktop */}

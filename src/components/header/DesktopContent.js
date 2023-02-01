@@ -28,11 +28,10 @@ function DesktopContent(props) {
                 action={props.logoutHandler}
               />
               <DesktopButton to="/favorites">
-                {!props.hasFavorites && (
-                  <Box as={AiOutlineHeart} size={25} color="#e31b23" />
-                )}
-                {props.hasFavorites && (
+                {props.hasFavorites ? (
                   <Box as={AiFillHeart} size={25} color="#e31b23" />
+                ) : (
+                  <Box as={AiOutlineHeart} size={25} color="#e31b23" />
                 )}
               </DesktopButton>
             </Fragment>
@@ -54,5 +53,3 @@ function DesktopContent(props) {
 }
 
 export default DesktopContent;
-
-// background: "var(--chakra-colors-gray-100)";

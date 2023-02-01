@@ -65,10 +65,15 @@ const CheckoutCart = () => {
           }-${cartItem.size}-${cartItem.color.toUpperCase()}`}
         >
           <AspectRatio ratio={1} w={24}>
-            <Image
-              src={cartItem.item.productDetails.imageOne}
-              alt={cartItem.item.productDetails.productName}
-            />
+            <Link
+              as={RouterLink}
+              to={`/products/${cartItem.item.category}/${cartItem.item.subcategory}/${cartItem.item.productDetails.productName}/details`}
+            >
+              <Image
+                src={cartItem.item.productDetails.imageOne}
+                alt={cartItem.item.productDetails.productName}
+              />
+            </Link>
           </AspectRatio>
           <Stack
             spacing={0}
@@ -117,7 +122,7 @@ const CheckoutCart = () => {
       <Divider />
       <HStack justifyContent="space-between" w="full">
         <Text color={secondaryTextColor}>Total</Text>
-        <Heading size="lg">{newTotal}</Heading>
+        <Heading size="lg">{`$ ${newTotal.toFixed(2)}`}</Heading>
       </HStack>
     </VStack>
   );
