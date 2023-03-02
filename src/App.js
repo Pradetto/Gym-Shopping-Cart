@@ -66,7 +66,7 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/favorites" element={<FavoritesPage />} />
-              <Route path="*" element={<Navigate to="/home" replace />} />
+              <Route path="/*" element={<Navigate replace to="/home" />} />
             </Routes>
           </Suspense>
         </GridItem>
